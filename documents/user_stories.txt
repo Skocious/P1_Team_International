@@ -1,0 +1,23 @@
+                        ***USER STORIES***
+
+Reimbursement application requirements:
+1. employees must be able to log in
+2. employees must be able to log out
+3. employees may open checking or savings accounts
+4. employees may transfer money between their accounts
+5. employees may share accounts with others
+
+
+User Stories:
+1. As an employee I want to be able to log in through a webpage.
+2. As an employee I want to be able to log out through a webpage.
+3. As an employee I want to file for reimbursements as needed.
+4. As an employee I want to have the ability to attach supporting documentation to my reimbursement request.
+5. As an employee I only want authorized users to be able to access my account.
+6. As an employee I can request my reimbursement deposit money into any bank account I choose.
+7. As an employee my accounts will not accept deposits from unauthorized sources.
+8. As an employee I do not want a withdrawal from my account that will create a negative balance.
+9. As an employee I can close any of my accounts and if it contains funds, and if I have another open account, the funds
+will be transferred automatically to my open account.
+10. As an employee I can remove myself as a bank employee.
+1

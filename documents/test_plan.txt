@@ -1,0 +1,78 @@
+
+                                        ***TEST PLAN***
+
+This document will be used to describe the functionality of Project 0 / Banking Application. This document will
+outline the features of the application and best practice testing techniques.
+    The test methods will include functions to ensure accurate operations and user interactions within the application
+framework. For each bug found a unique test case will be created.
+
+[] Test Approach - systematic test of the functions of the application. The tests will ensure proper creation and
+management of the relevant database entries according to the User's request. The test case will include detailed
+information concerning the location and relevant information concerning the error. Test cases will be assigned to the
+respective Engineer for repair. Test cases will be assigned a deadline based on severity.
+
+    Tests will:
+        - Ensure every method it tested with at least one negative and one positive test for each test case
+        - Tests are designed to cover the scope of possible test failures
+        - Test that all tests have API endpoints
+        - Test that all API endpoints must handle exceptions
+    Customer layer tests:
+        - Tests that ensure the input values match the correct input type and length desired
+        - Tests that ensure the mathematical functions produce the correct amount
+        - Tests that ensure the correct exceptions are received for each result
+    Accounts layer tests:
+        - Test will ensure duplicate accounts can not be created.
+        - Tests will ensure sufficient funds for withdraw/transfer functions
+        - Tests will ensure no account is terminated with funds existing
+
+
+    ***Error Reporting***
+[] Timeline/Deadlines (2-3 weeks) : below outline proposes timeline targets
+    - week 1:
+        - Assigned technician will review within 24hrs of ticket creation
+        - Initial assessment to identify root cause
+        - Proposed fixes will be presented to team
+        - Alpha patch written
+        - Alpha patch to be reviewed
+    - week 2:
+        - Patch implementation and testing
+        - Patch rework or review
+        - Beta testing of patch functionality
+    - week 3:
+        - managerial review
+        - patch rework or approval
+        - summary submission
+        - ticket closed
+POSTMAN WITH CORRECT ROUTES COMING BACK TO HANDLE ERRORS
+
+[] Technologies Used:
+- Package Management
+    - PIP
+-Unit Testing
+    - Pytest
+- API Tools
+    - Psycopg[Binary]
+    - Flask
+    - Postman
+-SQL
+    -Dbeaver
+- AWS Database
+     -ec2
+     -rds
+
+**The test plan usually includes the following information:
+
+* 1. The overall objective of the testing effort.
+2. A detailed outline of how testing will be conducted (the test approach).
+3. The features, applications, or components to be tested.
+4. Detailed scheduling and resource allocation plans for testers and developers throughout all stages of testing.
+
+**A test case should include the following information.
+
+1. A unique name or number to identify it.
+2. The features, applications, or components covered by the test case.
+3. Specific data values required for input fields and button controls to be tested.
+4. The predicted results of actions taken during testing (the expected outcome).
+5. A description of the actual results following each action taken during testing (the actual outcome).
+6. An indication of whether or not the test case was successful.
+7. Any errors discovered.
