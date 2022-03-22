@@ -1,15 +1,15 @@
 
                                         ***TEST PLAN***
 
-This document will be used to describe the functionality of Project 0 / Banking Application. This document will
-outline the features of the application and best practice testing techniques.
+    This document will be used to describe the functionality of Project 1 / Expense Reimbursement Application. This
+document will outline the features of the application and best practice testing techniques.
     The test methods will include functions to ensure accurate operations and user interactions within the application
 framework. For each bug found a unique test case will be created.
 
 [] Test Approach - systematic test of the functions of the application. The tests will ensure proper creation and
 management of the relevant database entries according to the User's request. The test case will include detailed
-information concerning the location and relevant information concerning the error. Test cases will be assigned to the
-respective Engineer for repair. Test cases will be assigned a deadline based on severity.
+information concerning the location and relevant information concerning error reporting and fix. Error cases will be
+assigned to the respective Engineer for repair. Test cases will be assigned a deadline based on severity.
 
     Tests will:
         - Ensure every method it tested with at least one negative and one positive test for each test case
@@ -74,5 +74,5 @@ POSTMAN WITH CORRECT ROUTES COMING BACK TO HANDLE ERRORS
 3. Specific data values required for input fields and button controls to be tested.
 4. The predicted results of actions taken during testing (the expected outcome).
 5. A description of the actual results following each action taken during testing (the actual outcome).
-6. An indication of whether or not the test case was successful.
+6. An indication of whether the test case was successful.
 7. Any errors discovered.

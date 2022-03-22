@@ -19,5 +19,3 @@ User Stories:
 8. As an employee I do not want a withdrawal from my account that will create a negative balance.
 9. As an employee I can close any of my accounts and if it contains funds, and if I have another open account, the funds
 will be transferred automatically to my open account.
-10. As an employee I can remove myself as a bank employee.
-1
