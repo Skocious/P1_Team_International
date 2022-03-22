@@ -1,105 +1,62 @@
+
                                 ***TEST STRATEGY***
-[] to catch bugs report to administrator
-    - Users report some error to admin
-        Externally
-        - fork code in GitHub, comment on or fix bug
-            - commit the changes to forked branch
-                - create pull request
-        Internal
-        - Document internally in some sort of document or request/ticket management system
-            - request user to leave descriptive comments about bug including:
-                - Leave name
-                - Line/s location of the error
-                - What happened in the application
-                    - What was selected to produce the error
-                    - What type of interaction caused the error #CRUD?
-                    - What other lines of code could these errors have affected in the application
-                    - Suggestions for repair
-            - leave comment(#) in code line
-[] Creating API Endpoints
-    - define routes in flask
-    - use RESTFUL Practices when naming URI - URL
-    - create user guide for using APIs / Index
+
+
+[] Bug reporting  (Backend Users)
+    - Raise issue ticket in GitHub
+	 - Request developer to leave descriptive comments about bug including:
+            - Name
+            - What happened:
+            - What was selected to produce the error
+            - What type of interaction caused the error
+     - If possible provide a screenshot of the error
+            - Suggestions for repair
+	 - What other lines of code could these errors have affected in the application
+ 	 - Line/s location of the error
+ - Developer who wrote code
+    - leave comment(#) in code line
+Issue is assigned to team member or taken on as a group activity to follow through with the resolution process from
+start to finish
+
 [] Workflow to fix bugs:
-    - identify which problems to fix in order of importance
+    - During our next standup we discuss and identify which problems to fix in order of     importance
+    - The developer who repairs the issue will file a detailed report of cause and what steps were   taken to fix the
+      error.
+    - An analysis will be undertaken by team to determine potential effects on other areas of the application.
     - set deadline for repair
     - information about roles and order of operations
     - Summary
+
+[] Creating API Endpoints
+    - define routes in flask
+    - build in functionality to handle exceptions
+    - use RESTFUL Practices when naming URI - URL
+    - create user guide for using APIs / Index
+    - test with postman to ensure routes handle errors
+
+
 [] Best Practices
     - use proper naming conventions
+        -
     - use of comments to inform users/developers of method function
-    - avoid excessive use of abbreviations
+    - avoid use of abbreviations
+ -
+ ***Error Reporting***
+[] Timeline/Deadlines (2-3 weeks) : below outline proposes timeline targets
+    - week 1:
+        - Assigned technician will review within 24hrs of ticket creation
+        - Initial assessment to identify root cause
+        - Proposed fixes will be presented to team
+        - Alpha patch written
+        - Alpha patch to be reviewed
+    - week 2:
+        - Patch implementation and testing
+        - Patch rework or review
+        - Beta testing of patch functionality
+    - week 3:
+        - managerial review
+        - patch rework or approval
+        - summary submission
+        - ticket closed
 
 
-How to report bugs:
-  For bugs open issue from GitHub repository location and provide a detailed account of what problem occurred and what
-action you took to cause it. If possible provide a screenshot of the error. The engineer who repairs the issue will file
-a detailed report of cause and what steps were taken to fix the error. An analysis will be undertaken by team to
-determine potential effects on other areas of the application.
-
-How to create API endpoints:
-  Document what specific URIs the user will need to interact with for working with specific functions of the
-application. APIs with follow RESTFul naming conventions. APIs will cover the basic functionality for an employee to
-enter and retrieve information from the application.
-
-
-Workflow to fix bugs
-
-
-
-Best Practices
-etc.
-
-
-
-
-
-
-
-
-
-
-
-
-Test Plan
-
-
-
-
-
-
-
-
-Test Results
-
-
-
-
-
-Testing Documents: Strategy & Plan
-
-[] Test Strategy
-The test strategy document is a company-wide document that provides universal testing information
-
-How to report bugs
-How to create API endpoints
-Workflow to fix bugs
-Best Practices
-etc.
-
-
-[] Test Plan
-The test plan document is a project specific set of rules and practices to follow while working on project
-
-technologies used
-deadlines
-what is actually being tested
-what is NOT being tested
-
-Some terminology
-
-[] Test cases: test cases are singular tests
-
-[] Test suite: a collection of test cases
-
-[] Test results: a collection of test case results

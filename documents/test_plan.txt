@@ -26,40 +26,6 @@ assigned to the respective Engineer for repair. Test cases will be assigned a de
         - Tests will ensure no account is terminated with funds existing
 
 
-    ***Error Reporting***
-[] Timeline/Deadlines (2-3 weeks) : below outline proposes timeline targets
-    - week 1:
-        - Assigned technician will review within 24hrs of ticket creation
-        - Initial assessment to identify root cause
-        - Proposed fixes will be presented to team
-        - Alpha patch written
-        - Alpha patch to be reviewed
-    - week 2:
-        - Patch implementation and testing
-        - Patch rework or review
-        - Beta testing of patch functionality
-    - week 3:
-        - managerial review
-        - patch rework or approval
-        - summary submission
-        - ticket closed
-POSTMAN WITH CORRECT ROUTES COMING BACK TO HANDLE ERRORS
-
-[] Technologies Used:
-- Package Management
-    - PIP
--Unit Testing
-    - Pytest
-- API Tools
-    - Psycopg[Binary]
-    - Flask
-    - Postman
--SQL
-    -Dbeaver
-- AWS Database
-     -ec2
-     -rds
-
 **The test plan usually includes the following information:
 
 * 1. The overall objective of the testing effort.

@@ -9,13 +9,15 @@ We want to see that you are building on the skills you have already learned, and
 development and testing processes are solid. We also want to see that your testing abilities are expanding.
 
 key features
-Employee
-should be able to log in and out of the application
-should be able to submit reimbursement requests with a reason
-requests should have an associated category they fall under (no less than 5 possible categories)
-should be able to cancel a reimbursement request
-should be able to see the total amount of money they have requested
-Business Rules
+[] Employee
+should be able to log in and out of the application (create_employee)
+should be able to submit reimbursement requests with a reason (employee_reimbursement_request)
+requests should have an associated category they fall under (no less than 5 possible categories) (employee_reimbursement_request)
+   - 1. travel - 2. office supplies -  3. meals - 4. parking - communications -
+should be able to cancel a reimbursement request (employee_delete_RR)
+should be able to see the total amount of money they have requested (employee_get_RR)
+
+[] Business Rules
 Employees reimbursement requests must be between $1 and $1000 per request
 Employee reimbursement request comments must be no longer than 100 characters
 Employee reimbursement requests must be in numeric form
