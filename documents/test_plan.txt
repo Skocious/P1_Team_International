@@ -16,14 +16,33 @@ assigned to the respective Engineer for repair. Test cases will be assigned a de
         - Tests are designed to cover the scope of possible test failures
         - Test that all tests have API endpoints
         - Test that all API endpoints must handle exceptions
-    Customer layer tests:
-        - Tests that ensure the input values match the correct input type and length desired
-        - Tests that ensure the mathematical functions produce the correct amount
-        - Tests that ensure the correct exceptions are received for each result
-    Accounts layer tests:
-        - Test will ensure duplicate accounts can not be created.
-        - Tests will ensure sufficient funds for withdraw/transfer functions
-        - Tests will ensure no account is terminated with funds existing
+
+
+    Employee layer tests:
+        - test to get employee success
+        - test to get employee non-existent id
+
+    Reimbursement layer tests:
+        - Test to ensure duplicate requests can not be created.
+        - test to ensure good request creation
+        - test for bad creation - request not created
+            - non str comment
+            - amount requested over limit of 1000
+            - can not request negative amount
+            - test for non-supported type of reimbursement upon request creation
+            - test for good type of reimbursement upon request creation
+        - test
+        - Tests to ensure a request is inbetween 1 and 1000 dollars
+        - test for request amount to be float / non str
+        - test for comment less than 100 char
+        - test for successful
+
+
+
+    Login layer tests:
+     - test successful login
+     - test successful log-out
+
 
 
 **The test plan usually includes the following information:
