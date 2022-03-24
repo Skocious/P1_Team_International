@@ -3,22 +3,25 @@ from interface.reimbursement_int import ReimbursementInt
 
 class ReimbursementImp(ReimbursementInt):
 
-    def create_reimbursement(self):
+    def create_request(self):
         pass
 
-    def get_reimbursement_by_request_id(self):
+    def get_request_by_request_id(self):
         pass
 
-    def get_reimbursement_by_employee_id(self):
+    def get_all_request_by_request_id(self):
         pass
 
-    def get_all_reimbursements_by_employee_id(self):
+    def get_request_by_employee_id(self):
         pass
 
-    def update_reimbursement_request(self):
+    def get_all_requests_by_employee_id(self):
         pass
 
-    def delete_reimbursement_request(self):
+    def update_request_request(self):
+        pass
+
+    def delete_request_request(self):
         pass
 
 
