@@ -1,9 +1,7 @@
-from interface.employee_int import employee_int
+from interface.employee_int import EmployeeInt
 
 
-
-
-class employee_imp(employee_int):
+class EmployeeEmp(EmployeeInt):
 
     def get_employee_by_id(self):
         pass

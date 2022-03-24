@@ -1,7 +1,7 @@
-from interface.reimbursement_int import reimbursement_int
+from interface.reimbursement_int import ReimbursementInt
 
 
-class reimbursement_imp(reimbursement_int):
+class ReimbursementImp(ReimbursementInt):
 
     def create_reimbursement(self):
         pass

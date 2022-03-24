@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class reimbursement_int(ABC):
+class ReimbursementInt(ABC):
 
     @abstractmethod
     def create_reimbursement(self):
