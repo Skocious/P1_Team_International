@@ -1,3 +1,4 @@
+from entities.employee import Employee
 from interface.employee_int import EmployeeInt
 
 

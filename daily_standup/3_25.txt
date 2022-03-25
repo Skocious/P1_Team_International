@@ -1,6 +1,6 @@
 Team International Daily standup 3/25/2022:
 
-We uploaded the completed structure of application in the git repository. Got the DB set up and connected our
+We uploaded the completed structure of application in the git repository. Got the DB set up on AWS and connected our
 DBeaver.
 
 Yeonghwan: Worked on defining structure and outlining which tests we will build.
