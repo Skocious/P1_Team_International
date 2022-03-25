@@ -10,3 +10,11 @@ def test_get_employee_by_employee_id():
     assert returned_employee.employee_id == 10
     print(returned_employee)
 
+
+def test_get_employee_by_non_existent_employee_id():
+    test_employee = Employee(100, "Test", "None")
+    returned_employee = employee_dao.get_employee_by_id(test_employee)
+    assert returned_employee.employee_id == 100
+    print(returned_employee)
+
+    
