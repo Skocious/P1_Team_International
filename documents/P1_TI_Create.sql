@@ -26,4 +26,12 @@ constraint reimbursements_foreign_key foreign key(employee_id) references employ
 
 );
 
+insert into login values(-1), (1), (2), (3), (4);
+insert into employee values(-1, 'Test', 'Delete', -1);
+insert into employee values(1, 'Madeleine', 'Albright', 1);
+insert into employee values(2, 'Margaret', 'Thatcher', 2);
+insert into employee values(3, 'Martin', 'King', 3);
+insert into employee values(4, 'Mahatma', 'Ghandi', 4);
+
+
 

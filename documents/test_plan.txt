@@ -18,25 +18,29 @@ assigned to the respective Engineer for repair. Test cases will be assigned a de
         - Test that all API endpoints must handle exceptions
 
 
-    Employee layer tests:
-        - test to get employee success
-        - test to get employee non-existent id
+    Employee DAO tests:
+        - Test to get employee success (test_get_employee_by_id_success)
+        - Test to get employee non-existent id (test_get_employee_non_existent)
 
-    Reimbursement layer tests:
+    Employee Service tests:
+        -
+        -
+
+    Reimbursement DAO tests:
+        - Test to ensure good request_id creation
+        - Test for bad creation - request_id not created
         - Test to ensure duplicate requests can not be created.
-        - test to ensure good request creation
-        - test for bad creation - request not created
-            - non str comment
-            - amount requested over limit of 1000
-            - can not request negative amount
-            - test for non-supported type of reimbursement upon request creation
-            - test for good type of reimbursement upon request creation
-        - test
+
+    Reimbursement Service test:
+        - non str comment
+        - amount requested over limit of 1000
+        - can not request negative amount
+        - Test for non-supported type of reimbursement upon request creation
         - Tests to ensure a request is inbetween 1 and 1000 dollars
         - test for request amount to be float / non str
         - test for comment less than 100 char
         - test for successful
-
+        -
 
 
     Login layer tests:

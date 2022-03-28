@@ -10,7 +10,7 @@ development and testing processes are solid. We also want to see that your testi
 
 key features
 [] Employee
-should be able to log in and out of the application (create_employee)
+should be able to log in and out of the application (log_in_employee/log_out_employee)
 should be able to submit reimbursement requests with a reason (employee_reimbursement_request)
 requests should have an associated category they fall under (no less than 5 possible categories) (employee_reimbursement_request)
    - 1. travel - 2. office supplies -  3. meals - 4. parking - communications -

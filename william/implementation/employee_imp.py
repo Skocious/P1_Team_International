@@ -12,8 +12,5 @@ class EmployeeImp(EmployeeInt):
         result = cursor.fetchone()
         if result is not None:
             return Employee(result[0], result[1], result[2])
-#       else:
+        else:
             assert True
-#
-# test = EmployeeImp()
-# result = test.get_employee_by_id(Employee(1, "Madeleine", "Albright"))
