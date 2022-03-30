@@ -1,0 +1,9 @@
+Daily Stand-up 3_28_2022
+
+Today we had lectured on html and css during the am and were shown S3 buckets. We will use this for the front end of our
+reimbursement application.
+
+Jeryl: We worked on our respective user case stories, test plan, and assigned methods
+Zakaria: We worked on our respective user case stories, test plan, and assigned methods
+Yeonghwan: We worked on our respective user case stories, test plan, and assigned methods
+Will: We worked on our respective user case stories, test plan, and assigned methods
