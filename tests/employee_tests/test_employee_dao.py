@@ -1,5 +1,5 @@
 from entities.employee import Employee
-from william.implementation.employee_imp import EmployeeImp
+from implementation.employee_imp import EmployeeImp
 
 employee_dao = EmployeeImp()
 
