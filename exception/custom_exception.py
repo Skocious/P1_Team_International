@@ -1,0 +1,3 @@
+class BadAccountInfo(Exception):
+    pass
+
