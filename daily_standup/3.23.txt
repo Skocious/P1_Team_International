@@ -1,6 +1,0 @@
-3/23/2022 Daily Standup
-
-Today we worked on our testing strategy, test plan, and created the structural outline of our application. We decided
-to have two entities (Employee, Reimbursement).
-
-Another QC down today! 7-8 to go.

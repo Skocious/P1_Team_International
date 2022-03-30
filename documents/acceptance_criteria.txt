@@ -1,5 +1,0 @@
-[] Test cases: test cases are singular tests
-
-[] Test suite: a collection of test cases
-
-[] Test results: a collection of test case results
