@@ -1,13 +1,18 @@
+from exception.custom_exception import *
 import re
+
 
 class Tester:
 
-    def id_tester(self, txt):
-        result = re.search(r'^[a-zA-Z]+\d+[a-zA-Z\d]+$', txt)
+    def login_id_tester(self, txt):
+        result = re.search(r'^[a-zA-Z0-9]', txt)
         if result is not None and len(txt) <= 20:
             return True
+        else:
+            raise BadAccountInfo("Type again ID name less then 20 and no special characters ")
 
-    def pw_tester(self):
-        result = re.search(r'^[a-zA-Z]+\d+[a-zA-Z\d]+$', txt)
-        if result is not None and len(txt) <= 20:
+    def login_pw_tester(self, txt):
+        if len(txt) <= 20:
             return True
+        else:
+            raise BadAccountInfo("Type again password less then 20")

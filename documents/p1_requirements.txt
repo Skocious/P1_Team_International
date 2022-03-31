@@ -22,6 +22,7 @@ Employees reimbursement requests must be between $1 and $1000 per request
 Employee reimbursement request comments must be no longer than 100 characters
 Employee reimbursement requests must be in numeric form
 Employees must be given a visual notice upon a successful or failed reimbursement request
+
 Requirements
 Your work should follow Behavior Driven Development practices
 Your work should follow Test Driven Development practices

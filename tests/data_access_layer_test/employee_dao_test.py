@@ -7,6 +7,7 @@ EDI = EmployeeDaoImp()
 
 test_employee = Employee(-1, 'Test', 'Delete', -1)
 
+
 def test_read_employee_info():
     result = EDI.read_employee_info(test_employee)
     assert result.employee_id == -1

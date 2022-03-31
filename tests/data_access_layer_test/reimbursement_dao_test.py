@@ -9,7 +9,6 @@ test_reim = Reimbursement(1, 1, 100, 'pending', 'travel', 'text')
 test_emp = Employee(-1, 'yeong', 'choi', -1)
 
 
-
 def test_create_request():
 
     result = RDI.create_request(test_reim, test_emp)
