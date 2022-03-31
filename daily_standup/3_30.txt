@@ -1,0 +1,7 @@
+Daily Standup 3_30_22 Wednesday
+
+Jeryl: Worked on Employee Service layer and User Acceptance Criteria
+Yeonghwan: Worked on Reimbursement Service Layer
+William: Worked on HTML and Employee Service layer
+Zakaria: We lost Zakaria from the class today
+
