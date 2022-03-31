@@ -31,7 +31,7 @@ Scenario:   I need to access the Reimbursement for to file for reimbursement
     Then:;  A statement appears that the comments must be no longer than 100 characters.
 
     Given:  I must identify the dollar amount for the Reimbursement Request
-    When:   I imput the amount into the dollar amount field
+    When:   I input the amount into the dollar amount field
     Then:   A statement appears identifying that the amount must be between $1.00 and $1,000.00
 
     Given:  I have filled in all the information requested on the Reimbursement Request form
