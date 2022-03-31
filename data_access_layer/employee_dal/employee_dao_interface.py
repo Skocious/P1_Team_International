@@ -3,8 +3,8 @@ from abc import ABC, abstractmethod
 from entities.employee import Employee
 
 
-class EmployeeDaoInterface(ABC):
-
+class EmployeeDaoInterface(A
+BC):
     @abstractmethod
     def read_employee_info(self, employee: Employee) -> Employee:
         pass
