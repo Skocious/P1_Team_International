@@ -1,0 +1,5 @@
+Daily Standup 3_31_22 Thursday
+
+Jeryl: Worked on finishing building tests
+Yeonghwan: Worked on finishing building tests
+William: Worked on finishing building tests
