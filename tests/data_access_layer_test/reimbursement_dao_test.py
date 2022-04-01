@@ -5,15 +5,14 @@ from entities.employee import Employee
 
 RDI = reimbursementDaoImp()
 
-test_reim = Reimbursement(1, 1, 100, 'pending', 'travel', 'text')
+test_reim = Reimbursement(1, 'travel', 100, 'text', 'pending', 1)
 test_emp = Employee(-1, 'yeong', 'choi', -1)
-
 
 
 def test_create_request():
 
-    result = RDI.create_request(test_reim, test_emp)
-    assert result.employee_id == -1
+    result = RDI.create_request(test_reim)
+    assert result.employee_id == 1
     # assert result.reimbursement_type == 'travel'
 
 
