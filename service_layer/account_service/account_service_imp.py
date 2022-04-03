@@ -4,7 +4,6 @@ from exception.custom_exception import *
 from utilities.tester_module import tester
 from entities.account import Account
 from entities.employee import Employee
-import re
 
 
 class AccountServiceImp(AccountServiceInterface):
@@ -21,5 +20,5 @@ class AccountServiceImp(AccountServiceInterface):
                 raise UserNotFound("User not found type again")
 
     def log_out(self, employee: Employee) -> True:
-        # logined employee Class = None
-        pass
+        login_employee = None
+        return login_employee
