@@ -1,0 +1,6 @@
+Daily Standup: Team International
+
+Progress: DAL completed, SER Layer 80%, HTML 80%
+
+
+Blockers: HTML DB Setup, BDD Setup, Postman routes.
