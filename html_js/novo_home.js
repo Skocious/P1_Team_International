@@ -1,30 +1,30 @@
-const loginForm = document.getElementById("login-form");
-const loginButton = document.getElementById("login-form-submit");
-const loginErrorMsg = document.getElementById("login-error-msg");
+const id_name = document.getElementById("username-field");
+const password = document.getElementById("password-field");
 
-loginButton.addEventListener("click", (e) => {
-    e.preventDefault(); // for testing - remove when ready to submit data upon click
-    const username = loginForm.username.value;
-    const password = loginForm.password.value;
-    window.localStorage.setItem("username", loginForm.username.value);
-    window.localStorage.setItem("password", loginForm.password.value);
-    
+// 1	test1	test11
 
-    if (username === "username" && password === "password") { //redirect to check db
-        
-        alert("You have successfully logged in."); // Here we will redirect to the employee home page
-        window.location.href="employee_homepage.html";
-        //location.reload();
-    } else {
-        loginErrorMsg.style.opacity = 1;
+async function loginFunction() {
+
+    console.log(id_name.value)
+    console.log(password.value)
+    let loginInfoJSON = {
+        "id_name": id_name.value,
+        "password": password.value
     }
-})
+    let loginCredentials = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(loginInfoJSON)
+    }
+    const httpResponse = await fetch("http://127.0.0.1:5000/login", loginCredentials)
+    if (httpResponse.status == 200) { // or whatever code you are looking for
+        const httpResponseBody = await httpResponse.json()
+        window.localStorage.setItem('employee_id', httpResponseBody['employee_id'])
+        alert('Wellcome' + " " + httpResponseBody["first_name"] + " " + httpResponseBody["last_name"])
+        window.location.href = "employee_homepage.html"
+            // alert(window.localStorage.getItem('employee_id'))
+    } else {
+        alert("Wrong Login Info Please, Try Again")
+    }
 
-// defer is used on the script to make sure the JS runs after the html is fully loaded
-
-// sql query example SELECT log_password FROM log_user WHERE log_username = %s (the username givin)
-
-// select a field of the loginForm form as formElement.nameOfField, where formElement is your HTML<form> andnameOfField is the 
-// value given to the name attribute of the <input> element you’re looking for. To get the value of the selected field, 
-// just add .value. For example, if the user typed “user01” in the username field, then we’ll get that value with 
-// loginForm.username.value
+}

@@ -3,7 +3,7 @@ from entities.employee import Employee
 from entities.reimbursement import Reimbursement
 
 
-class reimbursementDaoInterface(ABC):
+class ReimbursementDaoInterface(ABC):
 
     @abstractmethod
     def create_request(self, employee: Employee) -> Employee:
