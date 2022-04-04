@@ -1,56 +1,64 @@
-Acceptance Criteria for Project: Employee Reimbursement
+ACCEPTANCE CRITERIA FOR PROJECT 1: EMPLOYEE REIMBURSEMENT -> HAPPY PATH (Rev. 3)
 
-Feature:Employees should be able to log in and log out of their employee accounts.
+Feature:    Employees should be able to log in.
 
-Scenario:   I need to log-in to my employee account to be able to file for reimbursement for my travel expenses.
+Scenario:   I need to log-in to my employee account to file for reimbursement for my company expenses
 
-    Given:  I have an employee username and password, and i am in the employee homepage
-    When:   I input my username and password, i am able to successfully log in to my account
-    Then:   I have access to a "Reimbursement" button that directs me to the Reimbursement webpage.
+    Given   I am in the company's main page
+    When    I click the username box
+    When    I enter my username
+    When    I click on the password box
+    When    I enter my password
+    When    I am re-directed to the employee homepage
+    Then    I have access to the "Reimbursement" fields and table on the employee page
 
-    Given:  I have completed and submitted my Reimbursement request,
-    When:   I am ready to log out, a log-out button appears as an option after i have submitted my request
-    When:   I click the log-out button
-    Then:   I am re-directed back to the employee homepage
+Feature:    From the employee homepage, employees have the ability to file for reimbursement for company expenses
 
-Feature: Employees have the ability to file for reimbursement for expenses incurred on behalf of the company
+Scenario:   I am on the employee homepage where i can fill out a reimbursement request
 
-Scenario:   I need to access the Reimbursement for to file for reimbursement
+    Given   I need to enter multiple fields of information
+    When    I click on the dollar amount box
+    When    I fill in the dollar amount
+    When    I click on the comments section
+    When    I fill in the comments section
+    When    I click on the expense category section
+    When    I select the "Travel" expense category from the drop down box
+    When    I click on the "Submit" button
+    Then    I will receive a "Successfully Submitted" notification for my request
 
-    Given:  I have successfully logged in to the employee homepage and have clicked on the "Reimbursement" button
-    When:   A "Create Reimbursement Request" button appears on the Reimbursement webpage
-    When:   I click on the "Create Reimbursement Request"
-    Then:   I receive a Reimbursement Request form with the Request ID automatically inputted into the form.
+Feature:    Employees can review the total amount of all their Reimbursement Requests
 
-    Given:  I need to fill in multiple fields in the Reimbursement Request form,
-    When:   I fill out the first field,a drop down box allows me to choose one of five categories of expenses
-    Then:   I will select the "Travel" category as the reason for my expense
+Scenario:   I would like to know the total dollar amount of my Reimbursement Requests
+    Given   I have submitted my new Reimbursement Request
+    When    I receive a notification that my Reimbursement Request has been submitted
+    Then    I will also see the "Total of Reimbursement Requests" dollar amount automatically populated
 
-    Given:  I must identify the details regarding this expense in the "Comments" section
-    When:   I begin imputing my text into the "Comments" section
-    Then:;  A statement appears that the comments must be no longer than 100 characters.
+Feature: Employees can cancel their Reimbursement Request
 
-    Given:  I must identify the dollar amount for the Reimbursement Request
-    When:   I input the amount into the dollar amount field
-    Then:   A statement appears identifying that the amount must be between $1.00 and $1,000.00
+Scenario: I would like to cancel my Reimbursement Request
 
-    Given:  I have filled in all the information requested on the Reimbursement Request form
-    When:   I have clicked on "Complete"
-    When:   I have clicked on the "Submit" button
-    Then:   I will receive a "Successfully Submitted" notification or i will receive a "Submission Failed" notification
+    Given   I decide that I no longer want to submit a Reimbursement Request
+    When    I scroll down to the bottom of the Reimbursement Request
+    When    I enter the Reimbursement Request ID to be cancelled
+    When    I click on "Confirm" to cancel my request
+    When    I receive a notification confirming that my request has been cancelled
+    When    I click the "Okay"button
+    Then    I know the cancellation process is complete
 
-    Given:  I decide i no longer want to submit a Reimbursement Request
-    When:   I am in the Reimbursement Request form or in the "Successfully Submitted" or in the "Submission Failed"
-                notification
-    Then:   A "Cancel Request" button is available for me to cancel my Reimbursement Request
+Feature:   Employees should be able to log out.
 
-    Given:  I would like to review the status of all my Reimbursement Requests
-    When:   I receive the successful or failed notification
-    When    A button appears to check the status of all Reimbursement Requests
-    When:   i click on this option
-    Then:   A summary page appears with all my Reimbursement Requests with a total amount outstanding
+Scenario:  I need to log out of my employee account.
 
-    Note: Log-out scenario is above
+    Given  I am in the employee homepage
+    When   I see a log-out button on the screen
+    When   I click the log-out button
+    Then   I am re-directed back to the company main homepage, clearing everything on the employee homepage
+
+
+
+
+
+
 
 
 

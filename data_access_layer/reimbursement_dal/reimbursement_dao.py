@@ -4,11 +4,8 @@ from entities.reimbursement import Reimbursement
 from entities.employee import Employee
 from exception.custom_exception import *
 
-
+reimbursementDaoImp.create_request()
 class reimbursementDaoImp(reimbursementDaoInterface):
-    def __init__(self):
-        # self.reimbursement = {'1' : "travel", '2': 'office supplies', '3': 'meals', '4': 'parking', '5': 'communication'}
-        pass
 
     def create_request(self, reimbursement: Reimbursement) -> Reimbursement:
         info = reimbursement
