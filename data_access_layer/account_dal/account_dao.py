@@ -20,7 +20,7 @@ class AccountDao(AccountDaoInterface, ABC):
             return Employee(*employee_info)
         else:
             raise BadAccountInfo("No account with that Id found")
-
+#(1, Madeleine, Albright, 1)
     def create_account(self, employee: Employee, account: Account) -> True:
         sql_one = "insert into test_login values(default, %s, %s)"
         cursor = connection.cursor()
