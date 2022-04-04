@@ -1,0 +1,8 @@
+Daily Standup 4_4_22
+
+- Updated main branch with remaining app layers,
+- Need to add cors to api
+- Working on User Acceptance Criteria and turning Features into code.
+- Postman Testing
+
+Blockage: Javascript for webpage, API routes now available to build and test JS.

@@ -9,7 +9,7 @@ from entities.reimbursement import Reimbursement
 # 6. As an employee I want to see the total amount of my reimbursement requests.
 # 6. As an employee I can cancel a request.
 
-class reimbursementServiceInterface(ABC):
+class ReimbursementServiceInterface(ABC):
 
     @abstractmethod
     def create_reimbursement_request(self, employee: Employee) -> Employee:
