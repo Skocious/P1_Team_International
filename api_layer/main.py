@@ -1,5 +1,6 @@
 from functools import reduce
 import pandas as pd
+from flask_cors import CORS
 
 from entities.reimbursement import Reimbursement
 from service_layer.account_service.account_service_imp import AccountServiceImp
@@ -8,11 +9,13 @@ from service_layer.reimbursement_service.reimbursement_service_imp import Reimbu
 
 from entities.account import Account
 from exception.custom_exception import *
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, url_for, session, render_template, redirect
 from entities.employee import Employee
 import config
 
 app: Flask = Flask(__name__)
+CORS(app)
+
 
 ASI = AccountServiceImp()
 ESI = EmployeeServiceImp()
@@ -25,13 +28,16 @@ config.login_employee = None  # Employee class object
 # test_account = Account('test0', 'test00')
 # result = test_dao.employee_login(test_account)
 
+
+
 @app.route("/login", methods=["POST"])
 def login():
     try:
         data: dict = request.get_json()
         login_data = Account(data['id_name'], data['password'])
         config.login_employee = ASI.log_in(login_data)
-        return vars(config.login_employee), 201
+
+        return vars(config.login_employee), 200
     except BadAccountInfo as e:
         message = {
             "message": str(e)
@@ -47,7 +53,7 @@ def logout():
             return "Wrong try please sign in"
         else:
             config.login_employee = None
-            return " Successfully Logout", 201
+            return " Successfully Logout", 200
     except UserNotFound as e:
         message = {
             "message": str(e)
@@ -111,8 +117,9 @@ def get_all_requests_by_employee_id():
             return "Wrong try please sign in"
         else:
             result = RSI.get_all_reimbursement_by_employee_id(config.login_employee)
-            df = pd.DataFrame(result).sort_values('request_id')
-            return df.reset_index(drop=True).to_html(), str(sum(pd.to_numeric(df['balance'][df['status'] == 'pending'])))
+            # df = pd.DataFrame(result).sort_values('request_id')
+            # return df.reset_index(drop=True ).to_html(),str(sum(pd.to_numeric(df['balance'][df['status'] == 'pending'])))
+            return jsonify(result)
     except InfoNotFound as e:
         message = {
             "message": str(e)
