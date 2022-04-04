@@ -51,3 +51,4 @@ class ReimbursementDaoImp(ReimbursementDaoInterface):
 
     def delete_reimbursement_request(self, reimbursement: Reimbursement) -> True:
         pass
+RDI = ReimbursementDaoImp()
