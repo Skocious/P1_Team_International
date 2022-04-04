@@ -5,7 +5,9 @@ test_dao = AccountDao()
 
 # login: login_name = test0, pw = test00
 # employee: first_name = Test,last_name = Delete
-
+# test_account = Account('test0121', 'test0012')
+# result = test_dao.employee_login(test_account)
+# print(result)
 
 def test_employee_login():
 
