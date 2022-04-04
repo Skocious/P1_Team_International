@@ -52,3 +52,22 @@ function clearStore_return_to_login(){
     window.localStorage.clear();
     window.location.href ="novo_edge_home.html";
 }
+
+
+
+const myTableData = {
+    fName: {}
+    lName: {}
+    amount: {}
+    comments: {}
+
+};
+
+const head = document.getElementById("head");
+const body = document.getElementById("body")
+
+for (let obj in myTableData){
+    console.log(myTableData[obj]);
+    const row = document.createElement("tr");
+    row.innerHTML = `<td>${myTableData</td>`
+}
