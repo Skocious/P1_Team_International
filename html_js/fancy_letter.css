@@ -79,3 +79,20 @@ html {
     cursor: pointer;
     outline: none;
   }
+
+  /* #form.form-request {
+      display: table;
+  }
+
+  #div.form-request {
+      display: table-row;
+  }
+
+  #label, input {
+      display: table-cell;
+      margin-bottom: 10px;
+  }
+
+  #label {
+      padding-right: 10px;
+  } */
