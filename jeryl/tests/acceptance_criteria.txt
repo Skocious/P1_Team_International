@@ -54,11 +54,3 @@ Scenario:  I need to log out of my employee account.
     When   I click the log-out button
     Then   I am re-directed back to the company main homepage, clearing everything on the employee homepage
 
-
-
-
-
-
-
-
-
