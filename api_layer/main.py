@@ -119,7 +119,7 @@ def get_all_requests_by_employee_id():
             result = RSI.get_all_reimbursement_by_employee_id(config.login_employee)
             # df = pd.DataFrame(result).sort_values('request_id')
             # return df.reset_index(drop=True ).to_html(),str(sum(pd.to_numeric(df['balance'][df['status'] == 'pending'])))
-            return jsonify(result)
+            return jsonify(result), 200
     except InfoNotFound as e:
         message = {
             "message": str(e)
