@@ -19,24 +19,15 @@
   <main id="main-holder" action="employee_homepage.html" method="Post">
     <h1 id="welcome-header">Welcome Novo Edge Employee!</h1>
     <h3 id="welcome-notification" style="text-align: center;">Enter a request for each seperate category.</h3>
-      <!-- <div class="form-request">
-        <label for="fname">Enter your first name: </label>
-        <input type="text" name="lname" id="lname" placeholder="Please enter first name." required>
-      </div>
-      <div class="form-request">
-        <label for="lname">Enter your last name: </label>
-        <input type="text" name="lname" id="lname" placeholder="Please enter last name." required>
-      </div> -->
-      </div>
-      <div class="form-request">
+      <div class="request">
         <label for="amount">Enter amount: </label>
         <input type="number" name="balance" id="amount" placeholder="Please enter amount." required>
       </div>
-      <div class="form-request">
+      <div class="request">
         <label for="comment">Comments: </label>
         <input type="text" name="comment" id="comment" placeholder="Please enter <100 char." required>
       </div>
-      <div style="text-align: center;"class="form-request">
+      <div style="text-align: center;"class="request">
         <label for="category">Choose a category: </label>
         <select name="category" id="category" required>
           <option value="travel">Travel</option>
@@ -45,33 +36,35 @@
           <option value="parking">Parking</option>
           <option value="communication">Communications</option>
       </select>    
-      <div class="form-request">
+      <div class="request">
         <br>
-        <button>Submit</button>
+        <button onclick="requestEmployeeRequests()">Request Submit</button>
+        <!-- <button onclick="currentEmpRequest()">See Requests</button> -->
       </div>
-  <br>
-    
-    
-    
-    <table id="reimbursement-status">
-       <tr>
-        <th id="employeeidt">Employee_ID</th>
-        <th id="requestidt">Request_ID</th>
-        <th id="requesttypet">Request_Type</th>
-        <th id="amountt">Amount</th>
-        <th id="commentt">Comment</th>
-        <th id="statust">Status</th>
-            <!-- <tr id="body">
-                <td align="center">1</td>
-                <td align="center">199</td>
-                <td align="center">Travel</td>
-                <td align="center">999</td>
-                <td rowspan="3">Drove from Washington D.C. to Los Angeles, I stopped for gas ten times, ate $500 worth of junk food!</td>
-                <td>Pending</td>
-            </tr>
-    </tr> -->
+      <br> 
+    <table id="statusTable">
+      <thead id="reimbTHead">
+        <tr>
+          <th>Amount</th>
+          <th>Comments</th>
+          <th>Category</th>
+          <th>Request ID</th>       
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+        <tr>
+
+        </tr>
+      </tbody> 
     </table>
     <!-- <table><th id="tbalance" name="tbalance">Total Reimbursement Balance</th><tr>1000</tr></table>  -->
+    <br>
+    <div class="request">
+      <label for="cancel-req">Cancel Request:</label>
+      <input type="number" name="cancelReq" id="cancelReq" placeholder="Please enter RID." required>
+      <button onclick="cancelReimbursementRequest()">Cancel Submit</button>
+    </div>
     <br>
     <button onclick="clearStore_return_to_login()">Logout</button>   
     </main>
