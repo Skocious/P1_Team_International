@@ -4,23 +4,25 @@ employees_id = window.localStorage.getItem("id_name");
 
 function currentEmpReqest(returnedInfo){  
     reimbTableBody.innerHTML = "";
+    let requestId = 1
     for(let obj in returnedInfo){
         //console.log(returnedInfo[obj])
         const newRow = document.createElement("tr");
-        newRow.appendChild(newRow);
+        reimbTableBody.appendChild(newRow);
         const balance = returnedInfo[obj].balance;
         const comment = returnedInfo[obj].comment;
         //const employee_id = returnedInfo[obj].employee_id;
         const reimbursement_type = returnedInfo[obj].reimbursement_type;
         const request_id = returnedInfo[obj].request_id;
         const status = returnedInfo[obj].status;
+        
         returnedInfoList = [balance, comment, reimbursement_type, request_id, status];
         for (let elements of returnedInfoList) {
             const tData = document.createElement("td");
             tData.textContent = elements
             newRow.appendChild(tData)
-            tData.id = reqId
-            reqId ++
+            tData.id = requestId
+            requestId ++
         }
 
     }
@@ -34,7 +36,7 @@ async function requestEmployeeRequests(){
     if (response.status === 200) {
         const returnedInfo = await response.json();
         console.log(returnedInfo);
-        currentEmpReqst(returnedInfo);
+        currentEmpReqest(returnedInfo);
     } else {
         alert(`Try again`);
     }
@@ -87,3 +89,5 @@ function clearStore_return_to_login(){
     window.localStorage.clear();
     window.location.href ="novo_edge_home.html";
 }
+
+requestEmployeeRequests()
