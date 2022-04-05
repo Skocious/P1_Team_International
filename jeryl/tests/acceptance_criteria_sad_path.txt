@@ -19,7 +19,6 @@ Scenario:   I am on the employee homepage where i can fill out a reimbursement r
     Given   I need to enter multiple fields of information
     When    I click on the dollar amount box
     When    I fill in the dollar amount with an amount over $1,000
-    When    I receive an error message indicating "Bad Information"
     When    I click "Okay"
     Then    I can enter a dollar amount equal to or less than $1,000
 
