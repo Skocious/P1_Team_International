@@ -20,7 +20,7 @@ async function loginFunction() {
     if (httpResponse.status == 200) { // or whatever code you are looking for
         const httpResponseBody = await httpResponse.json()
         window.localStorage.setItem('employee_id', httpResponseBody['employee_id'])
-        alert('Wellcome' + " " + httpResponseBody["first_name"] + " " + httpResponseBody["last_name"])
+        alert('Welcome' + " " + httpResponseBody["first_name"] + " " + httpResponseBody["last_name"])
         window.location.href = "employee_homepage.html"
             // alert(window.localStorage.getItem('employee_id'))
     } else {
