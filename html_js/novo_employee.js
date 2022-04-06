@@ -1,6 +1,7 @@
 const reimbTableHead = document.getElementById("reimbHead");
 const reimbTableBody = document.getElementById("tableBody");
 employees_id = window.localStorage.getItem("id_name");
+const reimbursement_type = document.getElementById("category")
 
 function currentEmpReqest(returnedInfo){  
     reimbTableBody.innerHTML = "";
@@ -28,6 +29,20 @@ function currentEmpReqest(returnedInfo){
     }
 }
 
+
+// function sumTransaction()
+// {
+//     var td = document.querySelectorAll('#table_trans > tbody > tr > td:last-child');
+//     var total = 0;
+
+//     for (var i = 0; i < td.length; i++)
+//     {
+//         total += parseInt(td[i].innerText);
+//     }
+
+//     document.getElementById('area_total').innerText = total;
+// }
+
 async function requestEmployeeRequests(){
     
     let getURL = `http://127.0.0.1:5000/get_all_requests_by_employee_id`
@@ -42,15 +57,18 @@ async function requestEmployeeRequests(){
     }
 }
 
-
-async function createReimbusementRequest(){
+//console.log(document.getElementById("amount"))
+async function createReimbursementRequest(){
     
     let newRequestInfo = {
-        "reimbursement_type": document.getElementById("category"),
+        
+        "reimbursement_type": reimbursement_type.value,
         "balance": document.getElementById("amount"),
         "comment": document.getElementById("comment"),
         "status": "pending",
-        //"employees_id": employee_id
+        "employees_id": window.localStorage.getItem("employee_id")
+        
+        
     }
 
     let newRequest = {
@@ -59,29 +77,32 @@ async function createReimbusementRequest(){
         body: JSON.stringify(newRequestInfo)
     }
 
-    const response = await fetch("http://127.0.0.1:5000/create_reimbursement_request", newRequest)
+    const response = await fetch("http://127.0.0.1:5000/create_reimbursement_request", newRequest.value)
     if (response.status === 200) {
         const responseBody = await response.json()
-        window.localStorage.setItem("reimbursement_type", "balance", "comment", responseBody[employees_id])
+        //window.localStorage.setItem("reimbursement_type", "balance", "comment", responseBody[employees_id])
         alert("You have successfully created a reimbursement request!")
-        //currentEmpReqst()
+        requestEmployeeRequests()
     }
 }
 
-async function cancelReimbusementRequest(){
+async function cancelReimbursementRequest(){
  
-    let cancelRequest = {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(employees_id)
-    }
+    let requestCancelID = document.getElementById("cancelReq")
+    //console.log(requestCancelID.value)
+    // let cancelRequest = {
+    //     method: "GET",
+    //     headers: { "Content-Type": "application/json" },
+    //     body: JSON.stringify(employees_id),
+    //     //mode: "cors"
+    // }
 
-    const cresponse = await fetch("http://127.0.0.1:5000/cancel_reimbursement_request", cancelRequest)
+    const cresponse = await fetch("http://127.0.0.1:5000/cancel_reimbursement_request/"+ requestCancelID.value)
     if (cresponse.status === 200) {
         const cresponseBody = await cresponse.json()
-        window.localStorage.removeItem("can i call the row here and delete all data?", cresponseBody[request_id])
-        alert("You have successfully cancled a reimbursement request!")
-        //currentEmpReqst()
+        
+        alert("You have successfully canceled a reimbursement request!")
+        requestEmployeeRequests()
     }
 }
 

@@ -68,10 +68,10 @@ def create_reimbursement_request():
             return "Wrong try please sign in"
         else:
             data: dict = request.get_json()
-            Reimbursement_data = Reimbursement(0, data['reimbursement_type'], data['balance'], data['comment'],
-                                               data['status'], config.login_employee.employee_id)
+            Reimbursement_data = Reimbursement(0, data['reimbursement_type'], float(data['balance']), data['comment'],
+                                               data['status'], int(data['employees_id']))
             result = RSI.create_reimbursement_request(Reimbursement_data)
-            return vars(result), 201
+            return vars(result), 200
     except BalanceUnder as e:
         message = {
             "message": str(e)
@@ -95,9 +95,9 @@ def cancel_reimbursement_request(request_id: int):
         if config.login_employee is None:
             return "Wrong try please sign in"
         else:
-            data = Reimbursement(request_id, 0, 0, 0, 0, 0)
+            data = Reimbursement(int(request_id), 0, 0, 0, 0, 0)
             result = RSI.cancel_reimbursement_request(data)
-            return vars(result), 201
+            return vars(result), 200
     except TypeError as e:
         message = {
             "message": str(e)
