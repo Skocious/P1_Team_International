@@ -1,4 +1,3 @@
-from functools import reduce
 import pandas as pd
 from flask_cors import CORS
 
@@ -69,7 +68,7 @@ def create_reimbursement_request():
         else:
             data: dict = request.get_json()
             Reimbursement_data = Reimbursement(0, data['reimbursement_type'], data['balance'], data['comment'],
-                                               data['status'], config.login_employee.employee_id)
+                                               0, config.login_employee.employee_id)
             result = RSI.create_reimbursement_request(Reimbursement_data)
             return vars(result), 201
     except BalanceUnder as e:
@@ -95,8 +94,7 @@ def cancel_reimbursement_request(request_id: int):
         if config.login_employee is None:
             return "Wrong try please sign in"
         else:
-            data = Reimbursement(request_id, 0, 0, 0, 0, 0)
-            result = RSI.cancel_reimbursement_request(data)
+            result = RSI.cancel_reimbursement_request(Reimbursement(request_id, 0, 0, 0, 0, 0))
             return vars(result), 201
     except TypeError as e:
         message = {
@@ -110,13 +108,13 @@ def cancel_reimbursement_request(request_id: int):
         return jsonify(message), 400
 
 
-@app.route("/get_all_requests_by_employee_id", methods=["GET"])
-def get_all_requests_by_employee_id():
+@app.route("/get_all_requests_by_employee_id/<id>", methods=["GET"])
+def get_all_requests_by_employee_id(id):
     try:
         if config.login_employee is None:
             return "Wrong try please sign in"
         else:
-            result = RSI.get_all_reimbursement_by_employee_id(config.login_employee)
+            result = RSI.get_all_reimbursement_by_employee_id(id)
             # df = pd.DataFrame(result).sort_values('request_id')
             # return df.reset_index(drop=True ).to_html(),str(sum(pd.to_numeric(df['balance'][df['status'] == 'pending'])))
             return jsonify(result)

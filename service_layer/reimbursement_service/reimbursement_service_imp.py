@@ -16,8 +16,8 @@ class ReimbursementServiceImp(ReimbursementServiceInterface):
             reimbursement.balance = float(reimbursement.balance)
             return self.RDI.create_request(reimbursement)
 
-    def get_all_reimbursement_by_employee_id(self, employee: Employee) -> list:
-        result = self.RDI.get_all_requests_by_employee_id(employee)
+    def get_all_reimbursement_by_employee_id(self, employee_id: int) -> list:
+        result = self.RDI.get_all_requests_by_employee_id(employee_id)
         return result
 
     def cancel_reimbursement_request(self, reimbursement: Reimbursement) -> Reimbursement:
