@@ -8,7 +8,7 @@ from unittest.mock import MagicMock, patch
 from utilities.custom_exceptions.invalid_entry import InvalidEntry
 
 employee_dao = EmployeeDaoImp()
-employee_service = EmployeeServiceImp(employee_dao)
+employee_service = EmployeeServiceImp()
 
 
 def test_read_employee_info_success():
