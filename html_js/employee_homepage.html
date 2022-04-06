@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Novo Employee Homepage</title>
-  <link rel="stylesheet" href="fancy_letter.css">
-  <script defer src="novo_employee.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novo Employee Homepage</title>
+    <link rel="stylesheet" href="fancy_letter.css">
+    <script defer src="novo_employee.js"></script>
 </head>
 <style>
     table,
@@ -14,68 +15,67 @@
     td {
         border: 1px solid black;
     }
-    </style>
+</style>
+
 <body>
-  <main id="main-holder" action="employee_homepage.html" method="Post">
-    <h1 id="welcome-header">Welcome Novo Edge Employee!</h1>
-    <h3 id="welcome-notification" style="text-align: center;">Enter a request for each seperate category.</h3>
-      <!-- <div class="form-request">
-        <label for="fname">Enter your first name: </label>
-        <input type="text" name="lname" id="lname" placeholder="Please enter first name." required>
-      </div>
-      <div class="form-request">
-        <label for="lname">Enter your last name: </label>
-        <input type="text" name="lname" id="lname" placeholder="Please enter last name." required>
-      </div> -->
-      </div>
-      <div class="form-request">
-        <label for="amount">Enter amount: </label>
-        <input type="number" name="balance" id="amount" placeholder="Please enter amount." required>
-      </div>
-      <div class="form-request">
-        <label for="comment">Comments: </label>
-        <input type="text" name="comment" id="comment" placeholder="Please enter <100 char." required>
-      </div>
-      <div style="text-align: center;"class="form-request">
-        <label for="category">Choose a category: </label>
-        <select name="category" id="category" required>
+    <main id="main-holder" action="employee_homepage.html" method="Post">
+        <h1 id="welcome-header">Welcome Novo Edge Employee!</h1>
+        <h3 id="welcome-notification" style="text-align: center;">Enter a request for each seperate category.</h3>
+        <div class="request">
+            <label for="amount">Enter amount: </label>
+            <input type="number" name="balance" id="amount" placeholder="Please enter amount." required>
+        </div>
+        <div class="request">
+            <label for="comment">Comments: </label>
+            <input type="text" name="comment" id="comment" placeholder="Please enter <100 char." required>
+        </div>
+        <div style="text-align: center;" class="request">
+            <label for="category">Choose a category: </label>
+            <select name="category" id="category" required>
           <option value="travel">Travel</option>
           <option value="supplies" selected>Supplies </option>
           <option value="meals">Meals</option>
           <option value="parking">Parking</option>
           <option value="communication">Communications</option>
-      </select>    
-      <div class="form-request">
-        <br>
-        <button>Submit</button>
-      </div>
-  <br>
-    
-    
-    
-    <table id="reimbursement-status">
-       <tr>
-        <th id="employeeidt">Employee_ID</th>
-        <th id="requestidt">Request_ID</th>
-        <th id="requesttypet">Request_Type</th>
-        <th id="amountt">Amount</th>
-        <th id="commentt">Comment</th>
-        <th id="statust">Status</th>
-            <!-- <tr id="body">
-                <td align="center">1</td>
-                <td align="center">199</td>
-                <td align="center">Travel</td>
-                <td align="center">999</td>
-                <td rowspan="3">Drove from Washington D.C. to Los Angeles, I stopped for gas ten times, ate $500 worth of junk food!</td>
-                <td>Pending</td>
-            </tr>
-    </tr> -->
-    </table>
-    <!-- <table><th id="tbalance" name="tbalance">Total Reimbursement Balance</th><tr>1000</tr></table>  -->
-    <br>
-    <button onclick="clearStore_return_to_login()">Logout</button>   
-    </main>
-    
-</body>
-</html>
+      </select>
+            <div class="request">
+                <br>
+                <button onclick="createReimbursementRequest()">Request Submit</button>
+                <!-- <button onclick="currentEmpRequest()">See Requests</button> -->
+            </div>
+            <br>
+            <table id="statusTable">
+                <thead id="reimbTHead">
+                    <tr>
+                        <th>Amount</th>
+                        <th>Comments</th>
+                        <th>Category</th>
+                        <th>Request ID</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <tr>
 
+                    </tr>
+                </tbody>
+                <tfoot id="allbalance">
+                    <tr>
+
+                    </tr>
+                </tfoot>
+            </table>
+
+            <br>
+            <div class="request">
+                <label for="cancel-req">Cancel Request:</label>
+                <input type="number" name="cancelReq" id="cancelReq" placeholder="Please enter RID." required>
+                <button onclick="cancelReimbursementRequest()">Cancel Submit</button>
+            </div>
+            <br>
+            <button onclick="clearStore_return_to_login()">Logout</button>
+    </main>
+
+</body>
+
+</html>

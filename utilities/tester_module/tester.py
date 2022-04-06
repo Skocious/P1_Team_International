@@ -23,7 +23,6 @@ def reimbursement_tester(obj: Reimbursement):
         obj.balance = float(obj.balance)
     except:
         raise TypeError('Balance must be numeric')
-
     if 1 > obj.balance:
         raise BalanceUnder("Must be more than $1 per request")
     elif obj.balance > 1000:
