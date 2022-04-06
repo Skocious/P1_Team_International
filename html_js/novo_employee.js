@@ -62,13 +62,15 @@ async function createReimbursementRequest() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newRequestInfo)
     }
-    console
     let response = await fetch("http://127.0.0.1:5000/create_reimbursement_request", newRequest)
     if (response.status === 200) {
         // let responseBody = await response.json()
         //window.localStorage.setItem("reimbursement_type", "balance", "comment", responseBody[employees_id])
         alert("You have successfully created a reimbursement request!")
         requestEmployeeRequests();
+    } else (response.status === 400); {
+        let responseBody = await response.json()
+        alert(responseBody.message);
     }
 }
 
