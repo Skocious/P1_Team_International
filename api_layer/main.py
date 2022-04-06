@@ -15,11 +15,9 @@ import config
 app: Flask = Flask(__name__)
 CORS(app)
 
-
 ASI = AccountServiceImp()
 ESI = EmployeeServiceImp()
 RSI = ReimbursementServiceImp()
-
 
 config.login_employee = None  # Employee class object
 
@@ -116,6 +114,21 @@ def get_all_requests_by_employee_id(id):
             # df = pd.DataFrame(result).sort_values('request_id')
             # return df.reset_index(drop=True ).to_html(),str(sum(pd.to_numeric(df['balance'][df['status'] == 'pending'])))
             return jsonify(result), 200
+    except InfoNotFound as e:
+        message = {
+            "message": str(e)
+        }
+        return jsonify(message), 400
+
+
+@app.route("/get_sum_requests_amount_by_employee_id/<id>", methods=["GET"])
+def get_sum_requests_amount_by_employee_id(id):
+    try:
+        if config.login_employee is None:
+            return "Wrong try please sign in"
+        else:
+            result = RSI.get_all_reimbursement_by_employee_id(int(id))
+            return jsonify(sum([i['balance'] for i in result if i['status'] == 'pending'])), 200
     except InfoNotFound as e:
         message = {
             "message": str(e)

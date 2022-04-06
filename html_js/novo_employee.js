@@ -32,19 +32,6 @@ function currentEmpReqest(returnedInfo) {
     }
 }
 
-// function sumTransaction()
-// {
-//     var td = document.querySelectorAll('#table_trans > tbody > tr > td:last-child');
-//     var total = 0;
-
-//     for (var i = 0; i < td.length; i++)
-//     {
-//         total += parseInt(td[i].innerText);
-//     }
-
-//     document.getElementById('area_total').innerText = total;
-// }
-
 async function requestEmployeeRequests() {
 
     let getURL = "http://127.0.0.1:5000/get_all_requests_by_employee_id/"
@@ -60,7 +47,7 @@ async function requestEmployeeRequests() {
     }
 }
 
-//console.log(document.getElementById("amount"))
+
 async function createReimbursementRequest() {
 
     let newRequestInfo = {
@@ -88,25 +75,28 @@ async function createReimbursementRequest() {
 async function cancelReimbursementRequest() {
 
     let requestCancelID = document.getElementById("cancelReq")
-        //console.log(requestCancelID.value)
-        // let cancelRequest = {
-        //     method: "GET",
-        //     headers: { "Content-Type": "application/json" },
-        //     body: JSON.stringify(employees_id),
-        //     //mode: "cors"
-        // }
-
     let cresponse = await fetch("http://127.0.0.1:5000/cancel_reimbursement_request/" + requestCancelID.value)
     if (cresponse.status === 200) {
-        // let cresponseBody = await cresponse.json()
         alert("You have successfully canceled a reimbursement request!")
         requestEmployeeRequests();
     }
+}
+
+async function totalBalances() {
+    let totalBalanceOwed = document.getElementById("openBalance")
+    let bresponse = await fetch("http://127.0.0.1:5000/get_sum_requests_amount_by_employee_id/" + employee_id)
+    if (bresponse.status === 200) {
+        console.log(bresponse)
+        //appendChild.totalBalanceOwed
+    } else {
+        'Tryagain'
+}
+    
 }
 
 function clearStore_return_to_login() {
     window.localStorage.clear();
     window.location.href = "novo_edge_home.html";
 }
-
+totalBalances();
 requestEmployeeRequests();

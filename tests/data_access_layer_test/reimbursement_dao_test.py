@@ -22,7 +22,7 @@ def test_get_reimbursement_by_request_id():
 
 
 def test_get_all_requests_by_employee_id():
-    result = RDI.get_all_requests_by_employee_id(test_emp)
+    result = RDI.get_all_requests_by_employee_id(test_emp.employee_id)
     assert result[0]['employee_id'] == -1
 
 
