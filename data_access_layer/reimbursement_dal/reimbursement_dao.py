@@ -29,10 +29,10 @@ class ReimbursementDaoImp(ReimbursementDaoInterface):
         else:
             raise BadAccountInfo("No account with that Id found")
 
-    def get_all_requests_by_employee_id(self, employee: Employee) -> list:
+    def get_all_requests_by_employee_id(self, employee_id: int) -> list:
         sql = 'select * from reimbursements where employee_id = %s'
         cursor = connection.cursor()
-        cursor.execute(sql, [employee.employee_id])
+        cursor.execute(sql, [employee_id])
         connection.commit()
         reimbursement_objs = cursor.fetchall()
         if reimbursement_objs == []:

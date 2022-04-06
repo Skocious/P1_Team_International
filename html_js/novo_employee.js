@@ -1,12 +1,15 @@
 const reimbTableHead = document.getElementById("reimbHead");
 const reimbTableBody = document.getElementById("tableBody");
-employees_id = window.localStorage.getItem("id_name");
-const reimbursement_type = document.getElementById("category")
+const employee_id = window.localStorage.getItem("employee_id");
+const reimbursementType = document.getElementById("category")
+const balance = document.getElementById("amount")
+const comment = document.getElementById("comment")
 
-function currentEmpReqest(returnedInfo){  
+
+function currentEmpReqest(returnedInfo) {
     reimbTableBody.innerHTML = "";
     let requestId = 1
-    for(let obj in returnedInfo){
+    for (let obj in returnedInfo) {
         //console.log(returnedInfo[obj])
         const newRow = document.createElement("tr");
         reimbTableBody.appendChild(newRow);
@@ -16,19 +19,18 @@ function currentEmpReqest(returnedInfo){
         const reimbursement_type = returnedInfo[obj].reimbursement_type;
         const request_id = returnedInfo[obj].request_id;
         const status = returnedInfo[obj].status;
-        
+
         returnedInfoList = [balance, comment, reimbursement_type, request_id, status];
         for (let elements of returnedInfoList) {
             const tData = document.createElement("td");
             tData.textContent = elements
             newRow.appendChild(tData)
             tData.id = requestId
-            requestId ++
+            requestId++
         }
 
     }
 }
-
 
 // function sumTransaction()
 // {
@@ -43,13 +45,14 @@ function currentEmpReqest(returnedInfo){
 //     document.getElementById('area_total').innerText = total;
 // }
 
-async function requestEmployeeRequests(){
-    
-    let getURL = `http://127.0.0.1:5000/get_all_requests_by_employee_id`
-    const response = await fetch(getURL, {method:"GET"})
-    
+async function requestEmployeeRequests() {
+
+    let getURL = "http://127.0.0.1:5000/get_all_requests_by_employee_id/"
+
+    let response = await fetch(getURL + employee_id, { method: "GET" })
+
     if (response.status === 200) {
-        const returnedInfo = await response.json();
+        let returnedInfo = await response.json();
         console.log(returnedInfo);
         currentEmpReqest(returnedInfo);
     } else {
@@ -58,57 +61,52 @@ async function requestEmployeeRequests(){
 }
 
 //console.log(document.getElementById("amount"))
-async function createReimbursementRequest(){
-    
-    let newRequestInfo = {
-        
-        "reimbursement_type": reimbursement_type.value,
-        "balance": document.getElementById("amount"),
-        "comment": document.getElementById("comment"),
-        "status": "pending",
-        "employees_id": window.localStorage.getItem("employee_id")
-        
-        
-    }
+async function createReimbursementRequest() {
 
+    let newRequestInfo = {
+        "reimbursement_type": reimbursementType.value,
+        "balance": balance.value,
+        "comment": comment.value,
+        "employee_id": employee_id
+    }
+    console.log(newRequestInfo)
     let newRequest = {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newRequestInfo)
     }
-
-    const response = await fetch("http://127.0.0.1:5000/create_reimbursement_request", newRequest.value)
+    console
+    let response = await fetch("http://127.0.0.1:5000/create_reimbursement_request", newRequest)
     if (response.status === 200) {
-        const responseBody = await response.json()
+        // let responseBody = await response.json()
         //window.localStorage.setItem("reimbursement_type", "balance", "comment", responseBody[employees_id])
         alert("You have successfully created a reimbursement request!")
-        requestEmployeeRequests()
+        requestEmployeeRequests();
     }
 }
 
-async function cancelReimbursementRequest(){
- 
+async function cancelReimbursementRequest() {
+
     let requestCancelID = document.getElementById("cancelReq")
-    //console.log(requestCancelID.value)
-    // let cancelRequest = {
-    //     method: "GET",
-    //     headers: { "Content-Type": "application/json" },
-    //     body: JSON.stringify(employees_id),
-    //     //mode: "cors"
-    // }
+        //console.log(requestCancelID.value)
+        // let cancelRequest = {
+        //     method: "GET",
+        //     headers: { "Content-Type": "application/json" },
+        //     body: JSON.stringify(employees_id),
+        //     //mode: "cors"
+        // }
 
-    const cresponse = await fetch("http://127.0.0.1:5000/cancel_reimbursement_request/"+ requestCancelID.value)
+    let cresponse = await fetch("http://127.0.0.1:5000/cancel_reimbursement_request/" + requestCancelID.value)
     if (cresponse.status === 200) {
-        const cresponseBody = await cresponse.json()
-        
+        // let cresponseBody = await cresponse.json()
         alert("You have successfully canceled a reimbursement request!")
-        requestEmployeeRequests()
+        requestEmployeeRequests();
     }
 }
 
-function clearStore_return_to_login(){
+function clearStore_return_to_login() {
     window.localStorage.clear();
-    window.location.href ="novo_edge_home.html";
+    window.location.href = "novo_edge_home.html";
 }
 
-requestEmployeeRequests()
+requestEmployeeRequests();
