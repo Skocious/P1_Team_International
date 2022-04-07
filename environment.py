@@ -5,7 +5,7 @@ from tests.e2e_tests.page_object_models.novo_employee_page import NovoEmployeePa
 
 
 def before_all(context: Context):
-    context.driver = webdriver.Chrome("chromedriver.exe")
+    context.driver = webdriver.Chrome("tests/e2e_tests/chromedriver.exe")
     context.novo_home = NovoHompage(context.driver)
     context.novo_employee = NovoEmployeePage(context.driver)
     context.driver.implicitly_wait(1)
