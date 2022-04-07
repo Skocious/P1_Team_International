@@ -1,0 +1,576 @@
+{
+	"id": "1dce1bf3-ebdc-446b-942d-31e6bd29d7bd",
+	"name": "P1 Reimbursement App",
+	"timestamp": "2022-04-07T20:30:12.092Z",
+	"collection_id": "19841504-e7fa3621-5ab1-43a0-9659-5f4462cd204d",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 18,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "2a6d1803-0ffb-42a1-86b3-c0c32dd1b2b2",
+			"name": "positive_login",
+			"url": "http://127.0.0.1:5000/login",
+			"time": 123,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				123
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "4c3da568-3ed2-4f83-a699-12ef64d67a14",
+			"name": "negative_login_no_user",
+			"url": "http://127.0.0.1:5000/login",
+			"time": 121,
+			"responseCode": {
+				"code": 400,
+				"name": "BAD REQUEST"
+			},
+			"tests": {
+				"Status code is 400": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				121
+			],
+			"allTests": [
+				{
+					"Status code is 400": true
+				}
+			]
+		},
+		{
+			"id": "eab1b283-957f-454a-aa24-0afbd686cff9",
+			"name": "positive_logout",
+			"url": "http://127.0.0.1:5000/logout",
+			"time": 10,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				10
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "a952e10e-e098-4743-8505-2178a276cd94",
+			"name": "negative_logout_not_signed_in",
+			"url": "http://127.0.0.1:5000/logout",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "98204c4a-53f4-45a6-98b2-55bbf1175442",
+			"name": "Test Login",
+			"url": "http://127.0.0.1:5000/login",
+			"time": 120,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				120
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "e23ea140-4169-4ee6-9977-71ec768e4963",
+			"name": "positive_create_reimbursement",
+			"url": "http://127.0.0.1:5000/create_reimbursement_request",
+			"time": 126,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				126
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "ad6c593b-ec74-4435-86a0-8f9e60ee00cc",
+			"name": "negative_create_reimbursement_balance",
+			"url": "http://127.0.0.1:5000/create_reimbursement_request",
+			"time": 7,
+			"responseCode": {
+				"code": 400,
+				"name": "BAD REQUEST"
+			},
+			"tests": {
+				"Status code is 400": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Status code is 400": true
+				}
+			]
+		},
+		{
+			"id": "a0d5794f-cd64-40df-bbb4-0ada0e7dfe6a",
+			"name": "negative_create_reimbursement_too_long_comment",
+			"url": "http://127.0.0.1:5000/create_reimbursement_request",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "BAD REQUEST"
+			},
+			"tests": {
+				"Status code is 400": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Status code is 400": true
+				}
+			]
+		},
+		{
+			"id": "e3dc85fd-5d3f-4c34-9fee-1b17f7680a46",
+			"name": "negative_create_reimbursement_non_number_amount",
+			"url": "http://127.0.0.1:5000/create_reimbursement_request",
+			"time": 14,
+			"responseCode": {
+				"code": 400,
+				"name": "BAD REQUEST"
+			},
+			"tests": {
+				"Status code is 400": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				14
+			],
+			"allTests": [
+				{
+					"Status code is 400": true
+				}
+			]
+		},
+		{
+			"id": "ad90e565-5010-4643-af5f-771eda5a1545",
+			"name": "negative_create_reimbursement_negative_number_amount",
+			"url": "http://127.0.0.1:5000/create_reimbursement_request",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "BAD REQUEST"
+			},
+			"tests": {
+				"Status code is 400": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Status code is 400": true
+				}
+			]
+		},
+		{
+			"id": "0cf7024b-fc5e-47b8-9123-02fe2c7bd633",
+			"name": "positive_cancel_reimbursement_request",
+			"url": "http://127.0.0.1:5000/cancel_reimbursement_request/7",
+			"time": 285,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				285
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "e0a8f593-93d7-42d0-809b-a64752b9faf9",
+			"name": "negative_cancel_reimbursement_request_str_id",
+			"url": "http://127.0.0.1:5000/cancel_reimbursement_request/a",
+			"time": 7,
+			"responseCode": {
+				"code": 400,
+				"name": "BAD REQUEST"
+			},
+			"tests": {
+				"Status code is 400": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Status code is 400": true
+				}
+			]
+		},
+		{
+			"id": "93677aff-1975-4c92-a726-68fd7caf043b",
+			"name": "negative_cancel_reimbursement_request_no_id",
+			"url": "http://127.0.0.1:5000/cancel_reimbursement_request/99",
+			"time": 123,
+			"responseCode": {
+				"code": 400,
+				"name": "BAD REQUEST"
+			},
+			"tests": {
+				"Status code is 400": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				123
+			],
+			"allTests": [
+				{
+					"Status code is 400": true
+				}
+			]
+		},
+		{
+			"id": "3d57cd43-7a70-4de8-b3f1-633ce4c20940",
+			"name": "positive_get_all_requests_by_employee_id",
+			"url": "http://127.0.0.1:5000/get_all_requests_by_employee_id/1",
+			"time": 138,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				138
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "87f7f5ba-a7b4-4796-be6a-71f6a9c1f8f7",
+			"name": "negative_get_all_requests_by_employee_id_",
+			"url": "http://127.0.0.1:5000/get_all_requests_by_employee_id/100",
+			"time": 140,
+			"responseCode": {
+				"code": 400,
+				"name": "BAD REQUEST"
+			},
+			"tests": {
+				"Status code is 400": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				140
+			],
+			"allTests": [
+				{
+					"Status code is 400": true
+				}
+			]
+		},
+		{
+			"id": "ae76dc49-5563-49e5-9174-f6b061d8f087",
+			"name": "Test Login 3",
+			"url": "http://127.0.0.1:5000/login",
+			"time": 125,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				125
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "064debfc-4b5b-4168-a01b-7a06e06963d6",
+			"name": "test_login_no_reim_record",
+			"url": "http://127.0.0.1:5000/get_all_requests_by_employee_id/3",
+			"time": 120,
+			"responseCode": {
+				"code": 400,
+				"name": "BAD REQUEST"
+			},
+			"tests": {
+				"Status code is 400": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				120
+			],
+			"allTests": [
+				{
+					"Status code is 400": true
+				}
+			]
+		},
+		{
+			"id": "ff238f9c-60bb-465a-8a9b-8254594e4b88",
+			"name": "get_total_balances",
+			"url": "http://127.0.0.1:5000/get_sum_requests_amount_by_employee_id/1",
+			"time": 125,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				125
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 1600,
+	"collection": {
+		"requests": [
+			{
+				"id": "2a6d1803-0ffb-42a1-86b3-c0c32dd1b2b2",
+				"method": "POST"
+			},
+			{
+				"id": "4c3da568-3ed2-4f83-a699-12ef64d67a14",
+				"method": "POST"
+			},
+			{
+				"id": "eab1b283-957f-454a-aa24-0afbd686cff9",
+				"method": "GET"
+			},
+			{
+				"id": "a952e10e-e098-4743-8505-2178a276cd94",
+				"method": "GET"
+			},
+			{
+				"id": "98204c4a-53f4-45a6-98b2-55bbf1175442",
+				"method": "POST"
+			},
+			{
+				"id": "e23ea140-4169-4ee6-9977-71ec768e4963",
+				"method": "POST"
+			},
+			{
+				"id": "ad6c593b-ec74-4435-86a0-8f9e60ee00cc",
+				"method": "POST"
+			},
+			{
+				"id": "a0d5794f-cd64-40df-bbb4-0ada0e7dfe6a",
+				"method": "POST"
+			},
+			{
+				"id": "e3dc85fd-5d3f-4c34-9fee-1b17f7680a46",
+				"method": "POST"
+			},
+			{
+				"id": "ad90e565-5010-4643-af5f-771eda5a1545",
+				"method": "POST"
+			},
+			{
+				"id": "0cf7024b-fc5e-47b8-9123-02fe2c7bd633",
+				"method": "GET"
+			},
+			{
+				"id": "e0a8f593-93d7-42d0-809b-a64752b9faf9",
+				"method": "GET"
+			},
+			{
+				"id": "93677aff-1975-4c92-a726-68fd7caf043b",
+				"method": "GET"
+			},
+			{
+				"id": "3d57cd43-7a70-4de8-b3f1-633ce4c20940",
+				"method": "GET"
+			},
+			{
+				"id": "87f7f5ba-a7b4-4796-be6a-71f6a9c1f8f7",
+				"method": "GET"
+			},
+			{
+				"id": "ae76dc49-5563-49e5-9174-f6b061d8f087",
+				"method": "POST"
+			},
+			{
+				"id": "064debfc-4b5b-4168-a01b-7a06e06963d6",
+				"method": "GET"
+			},
+			{
+				"id": "ff238f9c-60bb-465a-8a9b-8254594e4b88",
+				"method": "GET"
+			}
+		]
+	}
+}
