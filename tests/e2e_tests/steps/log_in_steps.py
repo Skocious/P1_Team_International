@@ -3,7 +3,7 @@ from behave import given, when, then
 
 @given(u'I am in the companys main page')
 def step_impl(context):
-    context.driver.get("file:///C:/Users/Will/Desktop/P1_Team_International/html_js/novo_edge_home.html")
+    context.driver.get("file:///C:/Users/Yeonghwan%20Choi/Desktop/novo_edge_home.html")
 
 
 @when(u'I enter my us {username} in the username box')

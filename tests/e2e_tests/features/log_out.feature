@@ -7,7 +7,7 @@ Feature: Employees should be able to log out.
 
         Example:
         |title                 |
-        |Novo Employee Login   |
+        |Novo Employee Homepage|
 
 
 
