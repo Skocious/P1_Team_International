@@ -40,10 +40,11 @@ async function requestEmployeeRequests() {
 
     if (response.status === 200) {
         let returnedInfo = await response.json();
-        console.log(returnedInfo);
+       // console.log(returnedInfo);
         currentEmpReqest(returnedInfo);
-    } else {
-        alert(`Try again`);
+ }  else if (response.status === 400) {
+        let responseBody = await response.json()
+        alert(responseBody.message);
     }
 }
 
@@ -64,14 +65,14 @@ async function createReimbursementRequest() {
     }
     let response = await fetch("http://127.0.0.1:5000/create_reimbursement_request", newRequest)
     if (response.status === 200) {
-        // let responseBody = await response.json()
-        //window.localStorage.setItem("reimbursement_type", "balance", "comment", responseBody[employees_id])
         alert("You have successfully created a reimbursement request!")
+        totalBalances();
         requestEmployeeRequests();
-    } else (response.status === 400); {
+  } else if (response.status === 400) {
         let responseBody = await response.json()
-        alert(responseBody.message);
+        alert(responseBody.message);   
     }
+    
 }
 
 async function cancelReimbursementRequest() {
@@ -80,7 +81,11 @@ async function cancelReimbursementRequest() {
     let cresponse = await fetch("http://127.0.0.1:5000/cancel_reimbursement_request/" + requestCancelID.value)
     if (cresponse.status === 200) {
         alert("You have successfully canceled a reimbursement request!")
+        totalBalances();
         requestEmployeeRequests();
+  } else if (cresponse.status === 400) {
+        let responseBody = await cresponse.json()
+        alert(responseBody.message);  
     }
 }
 
@@ -88,10 +93,13 @@ async function totalBalances() {
     let totalBalanceOwed = document.getElementById("openBalance")
     let bresponse = await fetch("http://127.0.0.1:5000/get_sum_requests_amount_by_employee_id/" + employee_id)
     if (bresponse.status === 200) {
-        console.log(bresponse)
-        //appendChild.totalBalanceOwed
-    } else {
-        'Tryagain'
+       // console.log(bresponse)
+       const value = await bresponse.json()
+       // console.log(value)
+       totalBalanceOwed.textContent = value
+  } else if (bresponse.status === 400) {
+        let responseBody = await bresponse.json()
+        alert(responseBody.message);
 }
     
 }
@@ -102,3 +110,9 @@ function clearStore_return_to_login() {
 }
 totalBalances();
 requestEmployeeRequests();
+
+//over 100 char
+// I took a trip to Denver and had an omlette with ham, cheddar cheese, monteray jack cheese, onoins and peppers. 
+
+// under 100 char
+// I walked from my ashram at Sabermanti 240 miles to the Dandi on the Arabian Sea to buy salt.
