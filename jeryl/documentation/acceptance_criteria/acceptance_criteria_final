@@ -1,0 +1,34 @@
+Acceptance Criteria - Final
+
+Feature: Employees should be able to log in.
+   Scenario Outline: I need to log-in to my employee account to file for reimbursement for my company expenses
+        Given   I am on the company's main page
+        When    I enter my username in the username box
+        When    I enter my password in the password box
+        When    I click the log-in button
+        Then    I am re-directed to the employee homepage with title
+
+Feature: From the employee homepage, employees have the ability to file for reimbursement for company expenses
+  Scenario Outline: I need to create a reimbursement request
+    Given   I am on the employee homepage
+    When    I inspect the page, I can see my Total Reimbursement Balance to date
+    When    I fill in the dollar amount for the Reimbursement Request
+    When    I fill in the Comments section
+    When    I select the Expense Category from the drop down box
+    When    I click on the Submit button
+    Then    I will receive a Successfully Submitted notification for my request
+
+Feature: Employees can cancel their Reimbursement Request
+    Scenario Outline: I would like to cancel my Reimbursement Request
+        Given   I am on the employee homepage
+        When    I enter the Reimbursement request_id to be cancelled
+        When    I click on Confirm to cancel my request
+        When    I receive a notification that the Reimbursement Request has been cancelled
+        Then    I click the Okay button to confirm the cancellation is complete
+
+Feature: Employees should be able to log out.
+    Scenario: I need to log out of my employee account.
+        Given  I am in the employee homepage
+        When   I click the log-out button
+        Then   I should be redirected to a webpage with the title title
+

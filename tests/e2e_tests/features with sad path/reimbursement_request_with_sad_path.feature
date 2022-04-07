@@ -1,4 +1,4 @@
-Feature: From the employee homepage, employees have the ability to file for reimbursement for company expenses
+  Feature: From the employee homepage, employees have the ability to file for reimbursement for company expenses
   Scenario: I need to fill out a reimbursement request
     Given   I am on the employee homepage
      When    I fill in the dollar amount
