@@ -27,3 +27,6 @@ class IdNotFound(Exception):
 
 class LoginInfoNotFound(Exception):
     pass
+
+class NonNumAmount(Exception):
+    pass
