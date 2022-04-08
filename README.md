@@ -1,5 +1,5 @@
 # Team International Reimbursement App (Revature-P1)
-This application will let employess createand manage reimbursement requests, as well as see the total amount of money that they have spent.
+This application will let employess create and manage reimbursement requests, as well as see the total amount of money that they have spent.
 
 ### Technologies Used
 Github,
