@@ -1,18 +1,21 @@
-                        ***USER STORIES***
+                                ***USER STORIES***
 
-Reimbursement application requirements:
-1. employees must be able to log in
-2. employees must be able to log out
-3. employees
-4. employees
-5. employees
+1) Employees should be able to log in using their username and password. They should be able to access the Employee
+    Homepage once they have logged in.
+
+2) Employees should be able to log out, and have their information cleared immediately after for security reasons.
+
+3) Employees should be able to create and submit a Reimbursement Request in order to get reimbursed for expenses
+    incurred on behalf of the company. Once they have logged in, and are in the Employee Homepage, they will:
+        * First be able to identify their Total Reimbursement Balance on the screen
+        * They will be able to fill in a dollar amount for the current request
+        * They will be able to fill in the Comments section required information regarding the expense incurred
+        * They will be able to identify and select an Expense Category from the drop-down box
+        * They will be able to click on the Submit button to get their request submitted
+        * They will receive a notification that their Reimbursement Request has been successfully submitted
+
+4) Employees are able to cancel their Reimbursement Request should they need to do so. There should be a Cancel button
+    visible on the Employee Homepage, so that they can cancel the request at any time prior to completing the process.
 
 
-User Stories:
-1. As an employee I want to be able to log in through a webpage.
-2. As an employee I want to be able to log out through a webpage.
-3. As an employee I want to file for reimbursements as needed.
-4. As an employee I want to choose a reason for my reimbursement.
-5. As an employee I want to add a comment about my reimbursement request.
-6. As an employee I want to see the total amount of my reimbursement requests.
-6. As an employee I can cancel a request.
+
