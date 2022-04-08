@@ -16,6 +16,7 @@ class NovoEmployeePage:
     def select_log_out_button_box(self):
         return self.driver.find_element(By.ID, 'logOut')
 
+<<<<<<< HEAD
     def select_amount_input_box(self):
         return self.driver.find_element(By.ID, 'amount')
 
@@ -29,3 +30,5 @@ class NovoEmployeePage:
         return self.driver.find_element(By.ID, 'submitButton')
 
 
+=======
+>>>>>>> origin/main

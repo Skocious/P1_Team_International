@@ -1,0 +1,24 @@
+                                ***USER STORIES***
+
+1) As an employee, I want to be able to access my company's Employee Homepage so that I can get reimbursed for expenses
+    incurred on behalf of the company. I want to be able to access this homepage by using my username and password.
+
+2) As an employee, I want to be able to log out from the Employee Homepage so that i can be assured that my information
+    is cleared upon logging out for security and privacy reasons.
+
+3) As am employee, I want to create and submit a Reimbursement Request so that i can get reimbursed quickly and
+    efficiently. I want to fill out just one page so that i can interact with the webpage in the following way:
+        * I can identify the Total Reimbursement Balance to date before i even start on this new request
+        * I can fill in a dollar amount for the new request
+        * I can fill out the Comments section with the required information regarding the expense incurred
+        * I can select an Expense Category from the drop-down box
+        * I can click on the Submit button to get my request submitted
+        * I want to receive a notification that my Reimbursement Request has been successfully submitted
+
+4) As an employee, I want to be able to cancel my Reimbursement Request if needed. There should be a Cancel button
+    visible on the Employee Homepage, so that I can cancel the request at any time prior to completing the process.
+
+
+
+
+

@@ -1,0 +1,56 @@
+ACCEPTANCE CRITERIA FOR PROJECT 1: EMPLOYEE REIMBURSEMENT -> HAPPY PATH (Rev. 3)
+
+Feature:    Employees should be able to log in.
+
+Scenario:   I need to log-in to my employee account to file for reimbursement for my company expenses
+
+    Given   I am in the company's main page
+    When    I click the username box
+    When    I enter my username
+    When    I click on the password box
+    When    I enter my password
+    When    I am re-directed to the employee homepage
+    Then    I have access to the "Reimbursement" fields and table on the employee page
+
+Feature:    From the employee homepage, employees have the ability to file for reimbursement for company expenses
+
+Scenario:   I am on the employee homepage where i can fill out a reimbursement request
+
+    Given   I need to enter multiple fields of information
+    When    I click on the dollar amount box
+    When    I fill in the dollar amount
+    When    I click on the comments section
+    When    I fill in the comments section
+    When    I click on the expense category section
+    When    I select the "Travel" expense category from the drop down box
+    When    I click on the "Submit" button
+    Then    I will receive a "Successfully Submitted" notification for my request
+
+Feature:    Employees can review the total amount of all their Reimbursement Requests
+
+Scenario:   I would like to know the total dollar amount of my Reimbursement Requests
+    Given   I have submitted my new Reimbursement Request
+    When    I receive a notification that my Reimbursement Request has been submitted
+    Then    I will also see the "Total of Reimbursement Requests" dollar amount automatically populated
+
+Feature: Employees can cancel their Reimbursement Request
+
+Scenario: I would like to cancel my Reimbursement Request
+
+    Given   I decide that I no longer want to submit a Reimbursement Request
+    When    I scroll down to the bottom of the Reimbursement Request
+    When    I enter the Reimbursement Request ID to be cancelled
+    When    I click on "Confirm" to cancel my request
+    When    I receive a notification confirming that my request has been cancelled
+    When    I click the "Okay"button
+    Then    I know the cancellation process is complete
+
+Feature:   Employees should be able to log out.
+
+Scenario:  I need to log out of my employee account.
+
+    Given  I am in the employee homepage
+    When   I see a log-out button on the screen
+    When   I click the log-out button
+    Then   I am re-directed back to the company main homepage, clearing everything on the employee homepage
+

@@ -1,4 +1,5 @@
 from behave import given, when, then
+<<<<<<< HEAD
 from selenium import webdriver
 from selenium.webdriver.support.expected_conditions import alert_is_present
 from selenium.webdriver.support.wait import WebDriverWait
@@ -32,3 +33,35 @@ def step_impl(context):
 def step_impl(context):
     WebDriverWait(context.driver, 4).until(alert_is_present())
     assert context.novo_employee.get_alert().text == "You have successfully created a reimbursement request!"
+=======
+
+
+@given(u'I need to enter multiple fields of information')
+def step_impl(context):
+    pass
+
+
+@when(u'I fill in the dollar amount')
+def step_impl(context):
+    pass
+
+
+@when(u'I click on the comments section')
+def step_impl(context):
+    pass
+
+
+@when(u'I fill in the comments section')
+def step_impl(context):
+    pass
+
+
+@when(u'I click on the expense category section')
+def step_impl(context):
+    pass
+
+
+@when(u'I select the "Travel" expense category from the drop down box')
+def step_impl(context):
+    pass
+>>>>>>> origin/main

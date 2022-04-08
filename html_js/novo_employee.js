@@ -42,8 +42,9 @@ async function requestEmployeeRequests() {
         let returnedInfo = await response.json();
        // console.log(returnedInfo);
         currentEmpReqest(returnedInfo);
-    } else {
-        alert(`Try again`);
+ }  else if (response.status === 400) {
+        let responseBody = await response.json()
+        alert(responseBody.message);
     }
 }
 
@@ -64,16 +65,21 @@ async function createReimbursementRequest() {
     }
     let response = await fetch("http://127.0.0.1:5000/create_reimbursement_request", newRequest)
     if (response.status === 200) {
-        // let responseBody = await response.json()
-        //window.localStorage.setItem("reimbursement_type", "balance", "comment", responseBody[employees_id])
         alert("You have successfully created a reimbursement request!")
         totalBalances();
         requestEmployeeRequests();
+<<<<<<< HEAD
   } else (response.status === 400); {
         let responseBody = await response.json()
         alert(responseBody.message);
 
+=======
+  } else if (response.status === 400) {
+        let responseBody = await response.json()
+        alert(responseBody.message);   
+>>>>>>> origin/main
     }
+    
 }
 
 async function cancelReimbursementRequest() {
@@ -84,6 +90,9 @@ async function cancelReimbursementRequest() {
         alert("You have successfully canceled a reimbursement request!")
         totalBalances();
         requestEmployeeRequests();
+  } else if (cresponse.status === 400) {
+        let responseBody = await cresponse.json()
+        alert(responseBody.message);  
     }
 }
 
@@ -95,10 +104,18 @@ async function totalBalances() {
        const value = await bresponse.json()
        // console.log(value)
        totalBalanceOwed.textContent = value
+<<<<<<< HEAD
     } else {
         'Tryagain'
 }
 
+=======
+  } else if (bresponse.status === 400) {
+        let responseBody = await bresponse.json()
+        alert(responseBody.message);
+}
+    
+>>>>>>> origin/main
 }
 
 function clearStore_return_to_login() {
@@ -106,4 +123,14 @@ function clearStore_return_to_login() {
     window.location.href = "novo_edge_home.html";
 }
 totalBalances();
+<<<<<<< HEAD
 requestEmployeeRequests();
+=======
+requestEmployeeRequests();
+
+//over 100 char
+// I took a trip to Denver and had an omlette with ham, cheddar cheese, monteray jack cheese, onoins and peppers. 
+
+// under 100 char
+// I walked from my ashram at Sabermanti 240 miles to the Dandi on the Arabian Sea to buy salt.
+>>>>>>> origin/main

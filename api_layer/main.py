@@ -1,3 +1,4 @@
+import logging
 from flask_cors import CORS
 from entities.reimbursement import Reimbursement
 from service_layer.account_service.account_service_imp import AccountServiceImp
@@ -8,7 +9,7 @@ from exception.custom_exception import *
 from flask import Flask, jsonify, request
 
 import config
-
+logging.basicConfig(filename="records.log", level=logging.DEBUG, format=f"%(asctime)s %(levelname)s %(message)s")
 app: Flask = Flask(__name__)
 CORS(app)
 
@@ -72,6 +73,11 @@ def create_reimbursement_request():
         }
         return jsonify(message), 400
     except TooLongComment as e:
+        message = {
+            "message": str(e)
+        }
+        return jsonify(message), 400
+    except ValueError as e:
         message = {
             "message": str(e)
         }

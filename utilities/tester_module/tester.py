@@ -29,6 +29,8 @@ def reimbursement_tester(obj: Reimbursement):
         raise BalanceOver("Balance must be 1000 or less.")
     elif len(obj.comment) > 100:
         raise TooLongComment('Comment should be no longer than 100 characters')
+    elif type(obj.balance) != float:
+        raise NonNumAmount('You must enter a number for the amount')
     else:
         return True
 

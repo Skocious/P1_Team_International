@@ -57,7 +57,11 @@ def test_create_reimbursement_request_negative_str_balance():
 def test_get_all_reimbursement_by_employee_id():
     RDI.get_all_requests_by_employee_id = MagicMock(return_value=[test_reim])
     result = RSI.get_all_reimbursement_by_employee_id(test_emp.employee_id)
+<<<<<<< HEAD
     assert result[0]['employee_id'] == -1
+=======
+    assert result[0]["employee_id"] == -1
+>>>>>>> origin/main
 
 
 def test_cancel_reimbursement_request():

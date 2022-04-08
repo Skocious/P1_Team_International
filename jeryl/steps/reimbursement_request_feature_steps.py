@@ -1,14 +1,7 @@
-from behave import given, when, then
-
-@given(u'I need to enter multiple fields of information')
-def step_impl(context):
-    raise NotImplementedError(u'STEP: Given I need to enter multiple fields of information')
 
 
-@when(u'I click on the dollar amount box')
-def step_impl(context):
-    raise NotImplementedError(u'STEP: When I click on the dollar amount box')
 
+<<<<<<< HEAD
 
 @when(u'I fill in the dollar amount')
 def step_impl(context):
@@ -36,3 +29,5 @@ def step_impl(context):
 
 
 @when(u'I click on the "Submit" button')
+=======
+>>>>>>> origin/main
