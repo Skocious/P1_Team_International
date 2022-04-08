@@ -3,8 +3,6 @@ from entities.employee import Employee
 
 EDI = EmployeeDaoImp()
 
-# employee: employee_id = -1, first_name = Test, last_name = Delete, login_id = -1
-
 test_employee = Employee(-1, 'Test', 'Delete', -1)
 
 
