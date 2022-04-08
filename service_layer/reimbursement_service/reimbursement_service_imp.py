@@ -1,8 +1,6 @@
 from service_layer.reimbursement_service.reimbursement_service_interface import ReimbursementServiceInterface
 from data_access_layer.reimbursement_dal.reimbursement_dao import ReimbursementDaoImp
-from entities.reimbursement import Reimbursement
-from entities.employee import Employee
-from exception.custom_exception import InfoNotFound
+
 from utilities.tester_module.tester import *
 
 
@@ -13,7 +11,6 @@ class ReimbursementServiceImp(ReimbursementServiceInterface):
 
     def create_reimbursement_request(self, reimbursement: Reimbursement) -> Reimbursement:
         if reimbursement_tester(reimbursement):
-            # reimbursement.balance = float(reimbursement.balance)
             return self.RDI.create_request(reimbursement)
 
     def get_all_reimbursement_by_employee_id(self, employee_id: int) -> list:

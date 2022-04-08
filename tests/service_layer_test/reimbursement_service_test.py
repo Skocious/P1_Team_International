@@ -56,8 +56,8 @@ def test_create_reimbursement_request_negative_str_balance():
 
 def test_get_all_reimbursement_by_employee_id():
     RDI.get_all_requests_by_employee_id = MagicMock(return_value=[test_reim])
-    result = RSI.get_all_reimbursement_by_employee_id(test_emp)
-    assert result[0].employee_id == -1
+    result = RSI.get_all_reimbursement_by_employee_id(test_emp.employee_id)
+    assert result[0]['employee_id'] == -1
 
 
 def test_cancel_reimbursement_request():
@@ -65,17 +65,3 @@ def test_cancel_reimbursement_request():
     result = RSI.cancel_reimbursement_request(test_reim)
     assert result.status == "Cancel"
 
-#
-# def test_non_numeric_request_reimbursement_request():
-#     try:
-#         RSI.create_reimbursement_request(-1, 'travel', 'abcde', 'text', 'pending', -1)
-#         assert False
-#     except NonNumericRequest as e:
-#         assert str(e) == "Request amount must be numeric. Please enter dollar amount."
-#
-# def test_status_not_provided_reimbursement_request():
-#     try:
-#         RSI.create_reimbursement_request(-1, 'travel', 100, 'text', 'status_not_provided', -1)
-#         assert False
-#     except StatusNotProvided as e:
-#         assert str(e) == "Please review your request and submit to obtain status."

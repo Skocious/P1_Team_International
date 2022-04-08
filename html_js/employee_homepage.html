@@ -40,7 +40,7 @@
       </select>
             <div class="request">
                 <br>
-                <button onclick="createReimbursementRequest()">Request Submit</button>
+                <button id="submitButton" onclick="createReimbursementRequest()">Request Submit</button>
                 <!-- <button onclick="currentEmpRequest()">See Requests</button> -->
             </div>
             <br>
@@ -70,10 +70,10 @@
             <div class="request">
                 <label for="cancel-req">Cancel Request:</label>
                 <input type="number" name="cancelReq" id="cancelReq" placeholder="Please enter RID." required>
-                <button onclick="cancelReimbursementRequest()">Cancel Submit</button>
+                <button id="cancelButton" onclick="cancelReimbursementRequest()">Cancel Submit</button>
             </div>
             <br>
-            <button onclick="clearStore_return_to_login()">Logout</button>
+            <button id="logOut" onclick="clearStore_return_to_login()">Logout</button>
     </main>
 
 </body>

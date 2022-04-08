@@ -2,7 +2,7 @@ from behave import given, when, then
 
 @given(u'I am in the company\'s main page')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: Given I am in the company\'s main page')
+    context.driver.get("http:127.0.0.1")
 
 @when(u'I enter my username in the username box')
 def step_impl(context):
