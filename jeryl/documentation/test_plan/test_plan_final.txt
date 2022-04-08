@@ -1,0 +1,55 @@
+                                        ***TEST PLAN***
+
+                                Main Testing Plan Components:
+                                    1) Technologies used
+                                    2) Deadlines
+                                    3) What is actually being tested, and what is not being tested
+
+1) We are using multiple programs and plug-ins for the multiple tests we are running on the Data Access, Service
+    API layers. We are also conducting End-to-End testing for simulated User Acceptance Testing.
+
+    NOTE: We are using GitHub as a repository and version control tool for all our data testing
+
+    A) For the Data Access Layer, we are using:
+        * Python with the PyCharm IDE
+        * AWS RDS, Postgres for database storage and services
+        * D Beaver as a multi-platform database tool to create databases and manipulate our testing data
+        * Psycopg-binary for the Connection Module, and to perform SQL queries
+
+    B) For the Service Layer, we are additionally using:
+        * Flask for mocking and stubbing
+        * Postman for creating and using the API
+
+    C) For the API and User Acceptance Testing, we are additionally using:
+        * HTML for website development
+        * CSS for website development
+        * Gherkin for Gherkin syntax coding stubs and E2E testing
+        * Cucumber for Gherkin syntax coding stubs and E2E testing
+        * Behave for Gherkin syntax coding stubs and E2E testing
+        * Selenium for E2E testing
+
+2) Deadlines:
+
+    The project is a deliverable for 4/8/2022, with a presentation on that date.
+
+    We are evaluating our progress in Daily Stand-Ups, however, on a weekly basis, we have the following target dates
+        and milestones:
+
+        By end of Week 1: Data Access and Service Layers
+        By end of Week 2: API Layer
+        By 4/6 and 4/7: Finalizing use of Behave and Selenium to run the User Acceptance Testing
+
+3) What we are testing and not testing:
+
+    A) For the Data Access Layer: We will have one positive unit test for all methods
+    B) For the Service Layer: We will have one positive unit test for applicable methods, and negative tests for all
+        business logic. Mocking and stubbing is included in these tests.
+    C) For the API: We test all methods with a positive test on Postman, and a negative test for each way the request
+        can fail on Postman
+    D) Every User Story has an E2E test; every Feature has its own Feature File, with both Happy and Sad Path coding
+    E) We are not testing for security and privacy issues
+
+
+
+
+
