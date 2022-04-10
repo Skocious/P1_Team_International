@@ -16,3 +16,14 @@ class NovoEmployeePage:
     def select_log_out_button_box(self):
         return self.driver.find_element(By.ID, 'logOut')
 
+    def select_amount_input_box(self):
+        return self.driver.find_element(By.ID, 'amount')
+
+    def select_comment_input_box(self):
+        return self.driver.find_element(By.ID, 'comment')
+
+    def select_type_selector(self): #travel
+        return self.driver.find_element(By.ID, 'category')
+
+    def select_submit_button(self):
+        return self.driver.find_element(By.ID, 'submitButton')

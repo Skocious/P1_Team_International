@@ -1,5 +1,5 @@
-from tests.e2etest.poms.novo_employee_page import NovoEmployeePage
-from tests.e2etest.poms.novo_homepage import NovoHomPage
+from poms.novo_homepage import NovoHomPage
+from poms.novo_employee_page import NovoEmployeePage
 from behave.runner import Context
 from selenium import webdriver
 

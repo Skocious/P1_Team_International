@@ -68,9 +68,16 @@ async function createReimbursementRequest() {
         alert("You have successfully created a reimbursement request!")
         totalBalances();
         requestEmployeeRequests();
+<<<<<<< HEAD
+  } else (response.status === 400); {
+        let responseBody = await response.json()
+        alert(responseBody.message);
+
+=======
   } else if (response.status === 400) {
         let responseBody = await response.json()
         alert(responseBody.message);   
+>>>>>>> origin/main
     }
     
 }
@@ -97,11 +104,18 @@ async function totalBalances() {
        const value = await bresponse.json()
        // console.log(value)
        totalBalanceOwed.textContent = value
+<<<<<<< HEAD
+    } else {
+        'Tryagain'
+}
+
+=======
   } else if (bresponse.status === 400) {
         let responseBody = await bresponse.json()
         alert(responseBody.message);
 }
     
+>>>>>>> origin/main
 }
 
 function clearStore_return_to_login() {
@@ -109,6 +123,9 @@ function clearStore_return_to_login() {
     window.location.href = "novo_edge_home.html";
 }
 totalBalances();
+<<<<<<< HEAD
+requestEmployeeRequests();
+=======
 requestEmployeeRequests();
 
 //over 100 char
@@ -116,3 +133,4 @@ requestEmployeeRequests();
 
 // under 100 char
 // I walked from my ashram at Sabermanti 240 miles to the Dandi on the Arabian Sea to buy salt.
+>>>>>>> origin/main

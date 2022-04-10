@@ -1,12 +1,11 @@
 from data_access_layer.reimbursement_dal.reimbursment_dao_interface import ReimbursementDaoInterface
 from utilities.connedtion_module.postgres_connection import connection
 from entities.reimbursement import Reimbursement
-from entities.employee import Employee
 from exception.custom_exception import *
+
 
 class ReimbursementDaoImp(ReimbursementDaoInterface):
     def __init__(self):
-        # self.reimbursement = {'1' : "travel", '2': 'office supplies', '3': 'meals', '4': 'parking', '5': 'communication'}
         pass
 
     def create_request(self, reimbursement: Reimbursement) -> Reimbursement:
@@ -35,7 +34,7 @@ class ReimbursementDaoImp(ReimbursementDaoInterface):
         cursor.execute(sql, [employee_id])
         connection.commit()
         reimbursement_objs = cursor.fetchall()
-        if reimbursement_objs == []:
+        if not reimbursement_objs:
             raise InfoNotFound('No Reimbursement record found')
         else:
             return [vars(Reimbursement(*info)) for info in reimbursement_objs]
@@ -50,4 +49,3 @@ class ReimbursementDaoImp(ReimbursementDaoInterface):
 
     def delete_reimbursement_request(self, reimbursement: Reimbursement) -> True:
         pass
-RDI = ReimbursementDaoImp()

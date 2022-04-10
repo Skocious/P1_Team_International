@@ -1,18 +1,13 @@
 import logging
-
-import pandas as pd
 from flask_cors import CORS
-from psycopg.types.array import NoneType
-
 from entities.reimbursement import Reimbursement
 from service_layer.account_service.account_service_imp import AccountServiceImp
 from service_layer.employee_service.employee_service_imp import EmployeeServiceImp
 from service_layer.reimbursement_service.reimbursement_service_imp import ReimbursementServiceImp
-
 from entities.account import Account
 from exception.custom_exception import *
 from flask import Flask, jsonify, request
-from entities.employee import Employee
+
 import config
 logging.basicConfig(filename="records.log", level=logging.DEBUG, format=f"%(asctime)s %(levelname)s %(message)s")
 app: Flask = Flask(__name__)
@@ -24,9 +19,6 @@ RSI = ReimbursementServiceImp()
 
 config.login_employee = None  # Employee class object
 
-
-# test_account = Account('test0', 'test00')
-# result = test_dao.employee_login(test_account)
 
 @app.route("/login", methods=["POST"])
 def login():
@@ -66,8 +58,8 @@ def create_reimbursement_request():
             return "Wrong try please sign in"
         else:
             data: dict = request.get_json()
-            Reimbursement_data = Reimbursement(0, data['reimbursement_type'], float(data['balance']), data['comment'],
-                                               0, int(data['employee_id']))
+            Reimbursement_data = Reimbursement(0, data['reimbursement_type'], data['balance'], data['comment'],
+                                               0, config.login_employee.employee_id)
             result = RSI.create_reimbursement_request(Reimbursement_data)
             return vars(result), 200
     except BalanceUnder as e:
@@ -118,9 +110,8 @@ def get_all_requests_by_employee_id(id):
         if config.login_employee is None:
             return "Wrong try please sign in"
         else:
-            result = RSI.get_all_reimbursement_by_employee_id(int(id))
-            # df = pd.DataFrame(result).sort_values('request_id')
-            # return df.reset_index(drop=True ).to_html(),str(sum(pd.to_numeric(df['balance'][df['status'] == 'pending'])))
+            result = RSI.get_all_reimbursement_by_employee_id(config.login_employee.employee_id)
+
             return jsonify(result), 200
     except InfoNotFound as e:
         message = {
@@ -135,7 +126,7 @@ def get_sum_requests_amount_by_employee_id(id):
         if config.login_employee is None:
             return "Wrong try please sign in"
         else:
-            result = RSI.get_all_reimbursement_by_employee_id(int(id))
+            result = RSI.get_all_reimbursement_by_employee_id(config.login_employee.employee_id)
             return jsonify(sum([i['balance'] for i in result if i['status'] == 'pending'])), 200
     except InfoNotFound as e:
         message = {
